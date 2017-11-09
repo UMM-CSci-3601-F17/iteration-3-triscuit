@@ -7,12 +7,12 @@ export const environment = {
     envName: 'dev',
     production: false,
     firebase: {
-        apiKey: "AIzaSyCii_NTRaKjlbofrh0xI_SbBpOAE9vj7wg",
-        authDomain: "sage-2cfe4.firebaseapp.com",
-        databaseURL: "https://sage-2cfe4.firebaseio.com",
-        projectId: "sage-2cfe4",
-        storageBucket: "sage-2cfe4.appspot.com",
-        messagingSenderId: "999732247851"
+        apiKey: "AIzaSyDvsjiDFeUOGn1a2w_mUb7G4_W8XwQzszo",
+        authDomain: "iteration-3-triscuit.firebaseapp.com",
+        databaseURL: "https://iteration-3-triscuit.firebaseio.com",
+        projectId: "iteration-3-triscuit",
+        storageBucket: "iteration-3-triscuit.appspot.com",
+        messagingSenderId: "1018884495900"
     }
     // firebase: {
     //     apiKey: "AIzaSyCXnDgY8NA3167LzIXE72kymVY8ftF5K3Y",
