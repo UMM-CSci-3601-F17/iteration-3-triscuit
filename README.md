@@ -1,6 +1,5 @@
 # CSCI 3601 Production Template Fall 2017
-[![Build Status](https://travis-ci.org/UMM-CSci-3601-F17/iteration-2-cheezit.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601-F17/iteration-2-cheezit)
-
+[![Build Status](https://travis-ci.org/UMM-CSci-3601-F17/iteration-3-triscuit.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601-F17/iteration-3-triscuit)
 
 <!-- TOC depthFrom:1 depthTo:5 withLinks:1 updateOnSave:1 orderedList:0 -->
 ## Table of Contents
