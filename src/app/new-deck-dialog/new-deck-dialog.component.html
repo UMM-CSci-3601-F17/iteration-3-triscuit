@@ -4,12 +4,12 @@
         <mat-form-field>
             <input matInput required id="deckName" #input type="text" placeholder="Deck Name" [(ngModel)]="newDeckName" name="newDeckName">
         </mat-form-field>
-        <mat-form-field>
-            <mat-select matInput required [(ngModel)]="isShared" name="isShared">
-                <mat-option [value]="true">Yes</mat-option>
-                <mat-option [value]="false">No</mat-option>
-            </mat-select>
-        </mat-form-field>
+
+        <mat-select matInput required *ngIf="this.data && this.data.classId" id="shareState" placeholder="Share?" [(ngModel)]="isShared" name="isShared">
+            <mat-option [value]="true">Yes</mat-option>
+            <mat-option [value]="false">No</mat-option>
+        </mat-select>
+
     </mat-dialog-content>
     <mat-dialog-actions>
         <button mat-raised-button id="new-deck-submit" color="primary" #input type="button" [disabled]="!newDeckForm.form.valid" type="submit">Add Deck</button>

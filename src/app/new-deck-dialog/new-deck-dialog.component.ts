@@ -22,7 +22,7 @@ export class NewDeckDialogComponent implements OnInit {
 
     public addNewDeck(): void {
         if(this.data && this.data.classId)
-            this.deckService.addNewDeckClass(this.newDeckName, this.data.classId).then(
+            this.deckService.addNewDeckClass(this.newDeckName, this.isShared, this.data.classId).then(
                 succeeded => {
                     //this.deckService.decks.push(succeeded);
                     this.snackBar.open("Added deck", null, {

@@ -21,6 +21,7 @@ export class DeckComponent implements OnInit, OnDestroy {
     id: string;
     deck: Deck;
     cards: CardId[];
+    isShared: boolean;
 
 
     constructor(public afAuth: AngularFireAuth, public dialog: MatDialog, public deckService: DeckService, public snackBar: MatSnackBar, public classService: ClassService, private route: ActivatedRoute) {
@@ -54,6 +55,7 @@ export class DeckComponent implements OnInit, OnDestroy {
             this.deckService.getDeck(this.id).takeUntil(componentDestroyed(this)).subscribe(
                 deck => {
                     this.deck = deck;
+                    this.isShared = this.deck.isShared;
                 }
             );
 

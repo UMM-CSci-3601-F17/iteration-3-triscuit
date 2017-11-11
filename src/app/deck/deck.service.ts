@@ -71,9 +71,9 @@ export class DeckService {
         return this.db.doc('decks/' + deckID).collection('cards').add(body);
     }
 
-    public addNewDeckClass(name: string, classId : string) {
+    public addNewDeckClass(name: string, isShared: boolean, classId : string) {
         let deckCollection = this.db.collection<Deck>('decks');
-        return deckCollection.add({name: name, classId: classId});
+        return deckCollection.add({name: name, isShared: isShared, classId: classId});
     }
 
     public addNewDeckUser(name: string) {
