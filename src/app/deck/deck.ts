@@ -8,7 +8,8 @@ export interface Deck {
         }
     },
     classId?: string,
-    isPublic?: boolean
+    isPublic?: boolean,
+    isShared?: boolean
     //cards: Card[]
 }
 

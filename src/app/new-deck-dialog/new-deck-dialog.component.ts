@@ -18,6 +18,7 @@ export class NewDeckDialogComponent implements OnInit {
   }
 
   newDeckName: string;
+    isShared: boolean;
 
     public addNewDeck(): void {
         if(this.data && this.data.classId)
