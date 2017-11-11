@@ -99,6 +99,14 @@ export class DeckService {
         return this.db.doc('decks/' + deckId + '/cards/' + cardId).update(body);
     }
 
+    public editDeck(deckId: string, name: string, isShared: boolean) {
+        const body: Deck = {
+            name: name,
+            isShared: isShared
+        };
+        return this.db.doc('decks/' + deckId).update(body);
+    }
+
     public deleteCard(deckId: string, cardId: string){
         console.log(deckId);
         console.log(cardId);
