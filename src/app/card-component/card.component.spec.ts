@@ -71,10 +71,10 @@ describe('CardComponent', () => {
 class TestComponentWrapper {
     card : Card = {
         word : "test word",
-        synonym : "test synonym",
-        antonym: "test antonym",
-        general_sense: "test general_sense",
-        example_usage: "test example_usage",
+        synonym : ["test synonym"],
+        antonym: ["test antonym"],
+        general_sense: ["test general_sense"],
+        example_usage: ["test example_usage"],
     };
 
 
