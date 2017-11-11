@@ -64,7 +64,12 @@ export class DeckService {
             synonym: synonym,
             antonym: antonym,
             general_sense: general,
-            example_usage: example
+            example_usage: example,
+            users: {
+                [this.afAuth.auth.currentUser.uid] : {
+                    nickname: this.afAuth.auth.currentUser.displayName,
+                    owner: true
+                }}
         };
         console.log(body);
 
