@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {DeckService} from "../deck/deck.service";
 import {ActivatedRoute} from "@angular/router";
 import {Deck} from "../deck/deck";
@@ -44,6 +44,7 @@ export class PlayComponent implements OnInit, OnDestroy {
     public cardStates: CardState[];
 
 
+
     // from https://stackoverflow.com/a/27747377/8855259
 
     // dec2hex :: Integer -> String
@@ -66,6 +67,10 @@ export class PlayComponent implements OnInit, OnDestroy {
         const ref = firebase.database().ref('games').child(this.gameId);
         ref.onDisconnect().remove();
     }
+
+    @Input() selected?: number[] = [];
+
+    @Input() hideSelected?: boolean = false;
 
     public updateGame() {
         console.log("update game called " + this.pageNumber);
