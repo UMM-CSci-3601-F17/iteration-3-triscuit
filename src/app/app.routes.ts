@@ -8,7 +8,6 @@ import {PlayComponent} from "./play-component/play.component";
 import {MyDecksComponent} from "./my-decks/my-decks.component";
 import {ClassComponent} from "./class-component/class.component";
 import {JoinClassComponent} from "./join-class-component/join-class.component";
-import {PublicDecksComponent} from "./public-decks/public-decks.component";
 import {JoinGameComponent} from "./join-game/join-game.component";
 import {HelpComponent} from "./help/help.component";
 
@@ -20,7 +19,6 @@ export const routes: Routes = [
     {path: 'class/:id', component: ClassComponent},
     {path: 'joingame', component: JoinGameComponent},
     {path: 'mydecks', component: MyDecksComponent},
-    {path: 'publicdecks', component: PublicDecksComponent},
     {path: 'help', component: HelpComponent},
     {path: '', component: HomeComponent, pathMatch: 'full'}
 ];
