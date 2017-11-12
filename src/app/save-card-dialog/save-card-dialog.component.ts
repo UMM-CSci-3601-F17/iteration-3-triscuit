@@ -10,10 +10,10 @@ import {Card, CardId} from "../card/card";
 export class SaveCardDialogComponent implements OnInit {
 
     newCardWord: string;
-    newCardSynonym: string[];
-    newCardAntonym: string[];
-    newCardGeneral: string[];
-    newCardExample: string[];
+    newCardSynonym: string[] = [];
+    newCardAntonym: string[] = [];
+    newCardGeneral: string[] = [];
+    newCardExample: string[] = [];
 
 
 
@@ -21,17 +21,32 @@ export class SaveCardDialogComponent implements OnInit {
                 public matDialogRef : MatDialogRef<SaveCardDialogComponent>,
                 @Inject(MAT_DIALOG_DATA) public data: {card: CardId, deckId: string},
                 public snackBar: MatSnackBar) {
-        console.log("construcing SaveCardDialogComponent");
+        console.log("constructing SaveCardDialogComponent");
         console.log(data);
         this.newCardWord = data.card.word;
         this.newCardSynonym = data.card.synonym;
+        console.log(this.newCardSynonym.length);
         this.newCardAntonym = data.card.antonym;
         this.newCardGeneral = data.card.general_sense;
         this.newCardExample = data.card.example_usage;
+        this.fillHints(this.newCardSynonym);
+        console.log(this.newCardSynonym);
     }
 
 
     ngOnInit() {
+    }
+
+    public fillHints(hints:string[]):void{
+        var i = 0;
+        while(hints.length<5){
+            hints.push("");
+        }
+
+    }
+
+    public scrollHint(): string{
+        return this.newCardSynonym[0];
     }
 
     public editAddedCard(): void {
@@ -58,4 +73,5 @@ export class SaveCardDialogComponent implements OnInit {
             });
         this.matDialogRef.close();
     }
+
 }

@@ -5,16 +5,23 @@
             <input matInput required id="wordInput" #input type="text" placeholder="Word" [(ngModel)]="newCardWord" name="newCardWord">
         </mat-form-field>
         <mat-form-field>
-            <input matInput required id="synInput" #input type="text" placeholder="Synonym" [(ngModel)]="newCardSynonym" name="newCardSynonym">
+            <input matInput required id="synInput1" #input type="text" placeholder="Synonym1" [(ngModel)]="newCardSynonym[0]" name="newCardSynonym1">
         </mat-form-field>
         <mat-form-field>
-            <input matInput required id="antInput" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym" name="newCardAntonym">
+            <input matInput id="synInput2" #input type="text" placeholder="Synonym2" [(ngModel)]="newCardSynonym[1]" name="newCardSynonym2">
         </mat-form-field>
         <mat-form-field>
-            <input matInput required id="genInput" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral" name="newCardGeneral">
+            <input matInput id="synInput3" #input type="text" placeholder="Synonym3" [(ngModel)]="newCardSynonym[2]" name="newCardSynonym3">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput required id="antInput" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym[0]" name="newCardAntonym">
         </mat-form-field>
         <mat-form-field>
-            <input matInput required id="exInput" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample" name="newCardExample">
+            <input matInput required id="genInput" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral[0]" name="newCardGeneral">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput required id="exInput" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample[0]" name="newCardExample">
         </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions>
