@@ -12,6 +12,25 @@
             <button class="hint-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete || !this.getCardState(ind).cardHints.length" (click)="this.getCardState(ind).randomizeSages(); this.updateGame()">Hint?</button>
             <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <span class="score">Score: {{this.points}}</span>
 
+            <section>
+
+            <button class="emoji" mat-icon-button>
+                <mat-icon class="emoji" svgIcon="happy"></mat-icon>
+            </button>
+
+            <button class="emoji" mat-icon-button>
+                <mat-icon class="emoji" svgIcon="smile"></mat-icon>
+            </button>
+
+            <button class="emoji" mat-icon-button>
+                <mat-icon class="emoji" svgIcon="laughing"></mat-icon>
+            </button>
+
+            <button class="emoji" mat-icon-button>
+                <mat-icon class="emoji" svgIcon="smart"></mat-icon>
+            </button>
+
+            </section>
         </div>
     </div>
     </div>
@@ -24,3 +43,5 @@
     </kb-nav-button>
 </kb-page-slider>
 <div class="game-id">{{this.gameId}}</div>
+
+
