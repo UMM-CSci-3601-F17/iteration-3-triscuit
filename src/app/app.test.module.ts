@@ -36,6 +36,7 @@ import {GoogleSignInButtonComponent} from "./google-sign-in-button/google-sign-i
 import {PublicDecksComponent} from "./public-decks/public-decks.component";
 import {SaveCardDialogComponent} from "./save-card-dialog/save-card-dialog.component";
 import {JoinGameComponent} from "./join-game/join-game.component";
+import {HelpComponent} from "./help/help.component";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 
 @NgModule({
@@ -67,7 +68,8 @@ import {AngularFireDatabaseModule} from "angularfire2/database";
         GoogleSignInButtonComponent,
         PublicDecksComponent,
         SaveCardDialogComponent,
-        JoinGameComponent
+        JoinGameComponent,
+        HelpComponent
     ],
     entryComponents: [
         NewCardDialogComponent,
