@@ -104,10 +104,17 @@ export class DeckService {
         return this.db.doc('decks/' + deckId + '/cards/' + cardId).update(body);
     }
 
-    public editDeck(deckId: string, name: string, isShared: boolean) {
+    public editClassDeck(deckId: string, name: string, isShared: boolean) {
         const body: Deck = {
             name: name,
             isShared: isShared
+        };
+        return this.db.doc('decks/' + deckId).update(body);
+    }
+
+    public editDeck(deckId: string, name: string) {
+        const body: Deck = {
+            name: name,
         };
         return this.db.doc('decks/' + deckId).update(body);
     }
