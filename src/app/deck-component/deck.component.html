@@ -27,7 +27,7 @@
                     <div class="card-desc">Example usage:</div>
                     <div class="card-cont">{{ card.example_usage }}</div>
                 </div>
-                <mat-action-row *ngIf="this.canEdit()">
+                <mat-action-row *ngIf="this.canEdit() || this.canEditCard(card)">
                     <button mat-icon-button matTooltip="Edit card" (click)="editCard(card)" aria-label="Edit card">
                         <mat-icon>mode_edit</mat-icon>
                     </button>
@@ -42,6 +42,6 @@
 
 
 <button mat-fab id="cardDialog" class="deck-fab" matTooltip="Add Card" matTooltipPosition="left"
-        (click)="this.openAddDialog()" *ngIf="this.canEdit()">
+        (click)="this.openAddDialog()" *ngIf="this.canEdit() || this.isShared">
     <mat-icon class="md-24" aria-label="Add Card">add</mat-icon>
 </button>

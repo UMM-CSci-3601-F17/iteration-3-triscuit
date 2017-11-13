@@ -4,19 +4,18 @@
         <mat-card>
             <mat-card-title id="decks-title">{{ this.title }}</mat-card-title>
             <mat-divider></mat-divider>
-
             <mat-card-content>
-                <div class="wrapper">
-                    <mat-card class="deck" *ngFor="let deck of this.decks">
-                            <mat-card-title class="deck-name" matLine [routerLink]="['/deck', deck.id]">{{ deck.name }}</mat-card-title>
-                            <mat-divider></mat-divider>
-                            <div>
-                                <button mat-raised-button color="primary" class="play-button" [routerLink]="['/play', deck.id]">
-                                    Play
-                                </button>
-                            </div>
-                    </mat-card>
-                </div>
+
+
+                <mat-nav-list> <!-- *ngIf="this.deckService.decks; else decksError" -->
+                    <mat-list-item class="deck" *ngFor="let deck of this.decks">
+                        <a class="deck-name" matLine [routerLink]="['/deck', deck.id]">{{ deck.name }}</a>
+                        <button mat-raised-button color="primary" class="play-button" [routerLink]="['/play', deck.id]">
+                            Play
+                        </button>
+                    </mat-list-item>
+                </mat-nav-list>
+                <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
                <ng-template #decksError>
                     <p>
                         There was a problem loading the decks. Possibly the server is down or perhaps there are network
