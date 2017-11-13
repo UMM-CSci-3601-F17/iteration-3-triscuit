@@ -39,7 +39,6 @@ import {JoinGameComponent} from "./join-game/join-game.component";
 import {SaveDeckDialogComponent} from "./save-deck-dialog/save-deck-dialog.component"
 import {HelpComponent} from "./help/help.component";
 
-
 @NgModule({
     imports: [
         BrowserModule,

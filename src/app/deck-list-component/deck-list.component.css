@@ -1,18 +1,17 @@
-.wrapper {
+.deck-card {
     text-align: center;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     grid-template-rows: auto;
     grid-gap: 3px;
     background-color: transparent;
     color: black;
 }
 
+
 #decks-title {
     text-align: center;
 }
 
-.play-button {
-    margin: 10px;
-}
+

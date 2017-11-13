@@ -67,7 +67,7 @@ import {AngularFireDatabaseModule} from "angularfire2/database";
         GoogleSignInButtonComponent,
         SaveCardDialogComponent,
         JoinGameComponent,
-        HelpComponent
+        HelpComponent,
     ],
     entryComponents: [
         NewCardDialogComponent,

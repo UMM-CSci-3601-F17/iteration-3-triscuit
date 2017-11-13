@@ -30,7 +30,7 @@
             <button class="add-class-button" mat-icon-button (click)="this.openAddDialog()" *ngIf="afAuth.auth.currentUser">
                 <mat-icon aria-label="Add Deck">add</mat-icon>
             </button>
-                <h3 matSubheader>Classes</h3>
+                <h3 matSubheader>Classrooms</h3>
             <a mat-list-item *ngFor="let c of this.classService.classes" [routerLink]="['/class', c.id]" routerLinkActive="nav-active" [tdLayoutClose]="true">{{ c.name }}</a>
         </mat-nav-list>
 

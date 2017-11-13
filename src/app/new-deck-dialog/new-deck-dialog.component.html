@@ -2,7 +2,7 @@
 <form #newDeckForm="ngForm" (ngSubmit)="addNewDeck();">
     <mat-dialog-content layout="column" class="add-card-form-fields">
         <mat-form-field>
-            <input matInput required id="deckName" #input type="text" placeholder="Deck Name" [(ngModel)]="newDeckName" name="newDeckName">
+            <input matInput required id="deckName" #input type="text" maxlength="15" placeholder="Deck Name" [(ngModel)]="newDeckName" name="newDeckName">
         </mat-form-field>
 
         <mat-select matInput required *ngIf="this.data && this.data.classId" id="shareState" placeholder="Share?" [(ngModel)]="isShared" name="isShared">
