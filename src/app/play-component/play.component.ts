@@ -81,7 +81,6 @@ export class PlayComponent implements OnInit, OnDestroy {
         });
     }
 
-
     public addPoints(pageNumber : number): void {
 
         if(this.cardStates[pageNumber].isComplete == false && pageNumber < this.cards.length){

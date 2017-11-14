@@ -10,7 +10,6 @@ import {AngularFireAuth} from "angularfire2/auth";
 import {componentDestroyed} from "ng2-rx-componentdestroyed";
 import {SaveCardDialogComponent} from "../save-card-dialog/save-card-dialog.component";
 
-
 @Component({
     selector: 'app-deck',
     templateUrl: './deck.component.html',

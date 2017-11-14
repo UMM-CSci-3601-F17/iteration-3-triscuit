@@ -30,23 +30,43 @@ export class SaveDeckDialogComponent implements OnInit {
     }
 
     public editAddedDeck(): void {
-        this.deckService.editDeck(
-            this.data.deck.id,
-            this.newDeckName,
-            this.isShared).then(
-            succeeded => {
-                //this.cardAddSuccess = true
-                this.snackBar.open("Edited deck", null, {
-                    duration: 2000,
+        if (this.data.deck.classId) {
+            this.deckService.editClassDeck(
+                this.data.deck.id,
+                this.newDeckName,
+                this.isShared).then(
+                succeeded => {
+                    //this.cardAddSuccess = true
+                    this.snackBar.open("Edited deck", null, {
+                        duration: 2000,
+                    });
+                    //this.refreshDeck();
+                },
+                err => {
+                    console.log(err);
+                    this.snackBar.open("Error editing deck", null, {
+                        duration: 2000,
+                    });
                 });
-                //this.refreshDeck();
-            },
-            err => {
-                console.log(err);
-                this.snackBar.open("Error editing deck", null, {
-                    duration: 2000,
+            this.matDialogRef.close();
+        } else {
+            this.deckService.editDeck(
+                this.data.deck.id,
+                this.newDeckName).then(
+                succeeded => {
+                    //this.cardAddSuccess = true
+                    this.snackBar.open("Edited deck", null, {
+                        duration: 2000,
+                    });
+                    //this.refreshDeck();
+                },
+                err => {
+                    console.log(err);
+                    this.snackBar.open("Error editing deck", null, {
+                        duration: 2000,
+                    });
                 });
-            });
-        this.matDialogRef.close();
+            this.matDialogRef.close();
+        }
     }
 }

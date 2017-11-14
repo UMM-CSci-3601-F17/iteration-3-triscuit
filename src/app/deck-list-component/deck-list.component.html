@@ -1,38 +1,42 @@
 <div layout-gt-sm="row">
     <div flex-gt-xs="80" flex-offset-gt-xs="10" flex-xs="96" flex-offset-xs="2">
-
         <mat-card>
             <mat-card-title id="decks-title">{{ this.title }}</mat-card-title>
             <mat-divider></mat-divider>
-            <mat-card-content>
-
-
-                <mat-nav-list> <!-- *ngIf="this.deckService.decks; else decksError" -->
-                    <mat-list-item class="deck" *ngFor="let deck of this.decks">
-                        <a class="deck-name" matLine [routerLink]="['/deck', deck.id]">{{ deck.name }}</a>
-                        <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Edit Deck" (click)="editDeck(deck)" aria-label="Edit Deck">
-                            <mat-icon>mode_edit</mat-icon>
-                        </button>
-                        <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Delete Deck" (click)="deleteDeck(deck.id)" aria-label="Delete deck">
-                            <mat-icon>delete</mat-icon>
-                        </button>
-                        <button mat-raised-button color="primary" class="play-button" [routerLink]="['/play', deck.id]">
-                            Play
-                        </button>
-                    </mat-list-item>
-                </mat-nav-list>
-                <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
-               <ng-template #decksError>
-                    <p>
-                        There was a problem loading the decks. Possibly the server is down or perhaps there are network
-                        issues.
-                    </p>
-                    <p>
-                        Please wait a bit and try again or start the server.
-                    </p>
-                </ng-template>
-            </mat-card-content>
+            <td-message id="no-decks-message" *ngIf="!(this.decks)" label="No Decks"
+                        sublabel="The deck list is empty, tap + to add decks.">
+            </td-message>
         </mat-card>
+        <mat-card>
+                <div class="deck-card">
+                    <mat-card class="deck" *ngFor="let deck of this.decks">
+                        <mat-card-title class="deck-name" matLine [routerLink]="['/deck', deck.id]">{{ deck.name }}
+                        </mat-card-title>
+                        <mat-divider></mat-divider>
+                        <div class="actions">
+                            <mat-card-actions>
+                                <button mat-icon-button matTooltip="Play Deck" class="play-button" [routerLink]="['/play', deck.id]" aria-label="Play Deck">
+                                    <mat-icon>play_circle_filled</mat-icon>
+                                </button>
+                                <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Edit Deck" (click)="editDeck(deck)" aria-label="Edit Deck">
+                                    <mat-icon>mode_edit</mat-icon>
+                                </button>
+                                <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Delete Deck" (click)="deleteDeck(deck.id)" aria-label="Delete deck">
+                                    <mat-icon>delete_forever</mat-icon>
+                                </button>
+                            </mat-card-actions>
+                        </div>
+                    </mat-card>
+                </div>
+        </mat-card>
+        <ng-template #decksError>
+            <p>
+                There was a problem loading the decks. Possibly the server is down or perhaps there are network
+                issues.
+            </p>
+            <p>
+                Please wait a bit and try again or start the server.
+            </p>
+        </ng-template>
     </div>
 </div>
-
