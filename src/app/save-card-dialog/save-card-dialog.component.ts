@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import {DeckService} from "../deck/deck.service";
 import {MatDialogRef, MAT_DIALOG_DATA, MatSnackBar} from "@angular/material";
 import {Card, CardId} from "../card/card";
+import { CovalentVirtualScrollModule } from '@covalent/core';
 @Component({
   selector: 'app-save-card-dialog',
   templateUrl: './save-card-dialog.component.html',
@@ -17,8 +18,7 @@ export class SaveCardDialogComponent implements OnInit {
 
 
 
-    constructor(public deckService : DeckService,
-                public matDialogRef : MatDialogRef<SaveCardDialogComponent>,
+    constructor(public deckService : DeckService, public matDialogRef : MatDialogRef<SaveCardDialogComponent>,
                 @Inject(MAT_DIALOG_DATA) public data: {card: CardId, deckId: string},
                 public snackBar: MatSnackBar) {
         console.log("constructing SaveCardDialogComponent");
