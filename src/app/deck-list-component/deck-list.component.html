@@ -10,6 +10,12 @@
                 <mat-nav-list> <!-- *ngIf="this.deckService.decks; else decksError" -->
                     <mat-list-item class="deck" *ngFor="let deck of this.decks">
                         <a class="deck-name" matLine [routerLink]="['/deck', deck.id]">{{ deck.name }}</a>
+                        <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Edit Deck" (click)="editDeck(deck)" aria-label="Edit Deck">
+                            <mat-icon>mode_edit</mat-icon>
+                        </button>
+                        <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Delete Deck" (click)="deleteDeck(deck.id)" aria-label="Delete deck">
+                            <mat-icon>delete</mat-icon>
+                        </button>
                         <button mat-raised-button color="primary" class="play-button" [routerLink]="['/play', deck.id]">
                             Play
                         </button>
