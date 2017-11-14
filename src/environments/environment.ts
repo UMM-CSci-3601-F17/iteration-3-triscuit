@@ -13,13 +13,13 @@ export const environment = {
         projectId: "iteration-3-triscuit",
         storageBucket: "iteration-3-triscuit.appspot.com",
         messagingSenderId: "1018884495900"
-    }
+    },
     // firebase: {
-    //     apiKey: "AIzaSyCXnDgY8NA3167LzIXE72kymVY8ftF5K3Y",
-    //     authDomain: "test-vipul-sage.firebaseapp.com",
-    //     databaseURL: "https://test-vipul-sage.firebaseio.com",
-    //     projectId: "test-vipul-sage",
-    //     storageBucket: "test-vipul-sage.appspot.com",
-    //     messagingSenderId: "82160205434"
+    //     apiKey: "AIzaSyCeAAlzvNN8LIx0VwoI7oxbgCRdM5k1f9E",
+    //     authDomain: "danish-test-78b78 .firebaseapp.com",
+    //     databaseURL: "https://danish-test-78b78 .firebaseio.com",
+    //     projectId: "danish-test-78b78 ",
+    //     storageBucket: "danish-test-78b78 .appspot.com",
+    //     messagingSenderId: "208695998964"
     // }
 };

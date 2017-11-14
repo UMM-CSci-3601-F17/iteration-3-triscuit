@@ -119,19 +119,23 @@ export class PlayComponent implements OnInit, OnDestroy {
         return this.cardStates[i];
     }
 
-    public getEmojiHappy(){
-       this.emojiState==1;
-    }
-    public getEmojiSmile(){
-        this.emojiState==2;
-    }
-    public getEmojiSmart(){
-        this.emojiState==3;
-    }
-    public getEmojiLaughing(){
-        this.emojiState==4;
-    }
-    
+    // public getEmojiHappy(): number{
+    //    return 1;
+    //    console.log(this.emojiState);
+    // }
+    // public getEmojiSmile(){
+    //     this.emojiState=2;
+    //     console.log(this.emojiState);
+    // }
+    // public getEmojiSmart(){
+    //     this.emojiState=3;
+    //     console.log(this.emojiState);
+    // }
+    // public getEmojiLaughing(){
+    //     this.emojiState=4;
+    //     console.log(this.emojiState);
+    // }
+
     ngOnInit() {
 
         this.route.params.subscribe(params => {

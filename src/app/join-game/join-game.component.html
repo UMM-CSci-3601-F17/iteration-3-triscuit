@@ -5,6 +5,20 @@
             <app-card [card]="this.card" [selected]="this.selectedHints" [hideSelected]="true"></app-card>
 
             <span class="score">Score: {{this.points}}</span>
+
+           <div>
+                <mat-icon class="emoji" svgIcon="happy"></mat-icon>
+
+
+                <mat-icon class="emoji" svgIcon="smile"></mat-icon>
+
+
+                <mat-icon class="emoji" svgIcon="laughing"></mat-icon>
+
+
+                <mat-icon class="emoji" svgIcon="smart"></mat-icon>
+           </div>
+
         </div>
         <div *ngIf="!this.inGame">
             <mat-card>
@@ -18,5 +32,6 @@
                 </mat-card-content>
             </mat-card>
         </div>
+
     </div>
 </div>

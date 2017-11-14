@@ -104,4 +104,6 @@ export class DeckService {
         console.log(cardId);
         return this.db.doc('decks/' + deckId).collection('cards').doc(cardId).delete();
     }
+
+
 }
