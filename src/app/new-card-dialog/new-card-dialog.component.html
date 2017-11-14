@@ -14,7 +14,7 @@
                 <input matInput [required]="newCardSynonyms.length==0" id="synInput" #input type="text" placeholder="Synonym" [(ngModel)]="newCardSynonym" name="newCardSynonym">
             </mat-form-field>
             <button id="new-syn" class="addButton" mat-icon-button color="accent" matTooltip="Add another hint" [disabled]="newCardSynonym==''||newCardSynonyms.length>=4" (click)="pushNewHint('Synonym',newCardSynonym,newCardSynonyms);newCardSynonym=''">
-                <mat-icon>add</mat-icon/button>
+                <mat-icon>add</mat-icon>
             </button>
         </div>
 
