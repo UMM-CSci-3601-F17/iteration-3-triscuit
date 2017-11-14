@@ -3,21 +3,28 @@
         <mat-card>
             <mat-card-title id="decks-title">{{ this.title }}</mat-card-title>
             <mat-divider></mat-divider>
+            <td-message id="no-decks-message" *ngIf="!(this.decks)" label="No Decks"
+                        sublabel="The deck list is empty, tap + to add decks.">
+            </td-message>
+        </mat-card>
+        <mat-card>
                 <div class="deck-card">
                     <mat-card class="deck" *ngFor="let deck of this.decks">
                         <mat-card-title class="deck-name" matLine [routerLink]="['/deck', deck.id]">{{ deck.name }}
                         </mat-card-title>
                         <mat-divider></mat-divider>
                         <div class="actions">
-                            <button mat-icon-button matTooltip="Play Deck" class="play-button" [routerLink]="['/play', deck.id]" aria-label="Play Deck">
-                                <mat-icon>play_circle_filled</mat-icon>
-                            </button>
-                            <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Edit Deck" (click)="editDeck(deck)" aria-label="Edit Deck">
-                                <mat-icon>mode_edit</mat-icon>
-                            </button>
-                            <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Delete Deck" (click)="deleteDeck(deck.id)" aria-label="Delete deck">
-                                <mat-icon>delete_forever</mat-icon>
-                            </button>
+                            <mat-card-actions>
+                                <button mat-icon-button matTooltip="Play Deck" class="play-button" [routerLink]="['/play', deck.id]" aria-label="Play Deck">
+                                    <mat-icon>play_circle_filled</mat-icon>
+                                </button>
+                                <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Edit Deck" (click)="editDeck(deck)" aria-label="Edit Deck">
+                                    <mat-icon>mode_edit</mat-icon>
+                                </button>
+                                <button *ngIf="this.canEditDeck(deck)" mat-icon-button matTooltip="Delete Deck" (click)="deleteDeck(deck.id)" aria-label="Delete deck">
+                                    <mat-icon>delete_forever</mat-icon>
+                                </button>
+                            </mat-card-actions>
                         </div>
                     </mat-card>
                 </div>

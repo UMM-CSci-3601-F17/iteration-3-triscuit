@@ -2,7 +2,7 @@
 <form #newCardForm="ngForm" (ngSubmit)="addNewCard();">
     <mat-dialog-content layout="column" class="add-card-form-fields">
         <mat-form-field>
-            <input matInput required id="wordInput" #input type="text" placeholder="Word" [(ngModel)]="newCardWord" name="newCardWord">
+            <input matInput required id="wordInput" #input type="text" maxlength="16" placeholder="Word" [(ngModel)]="newCardWord" name="newCardWord">
         </mat-form-field>
         <mat-form-field>
             <input matInput required id="synInput" #input type="text" placeholder="Synonym" [(ngModel)]="newCardSynonym" name="newCardSynonym">
