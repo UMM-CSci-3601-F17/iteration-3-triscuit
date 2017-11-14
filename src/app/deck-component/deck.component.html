@@ -13,19 +13,19 @@
                 </mat-expansion-panel-header>
                 <div class="card-synonym card-line">
                     <div class="card-desc">Synonym:</div>
-                    <div class="card-cont">{{ card.synonym }}</div>
+                    <div *ngFor="let hint of card.synonym" class="card-cont">{{ hint }}</div>
                 </div>
                 <div class="card-antonym card-line">
                     <div class="card-desc">Antonym:</div>
-                    <div class="card-cont">{{ card.antonym }}</div>
+                    <div *ngFor="let hint of card.antonym" class="card-cont">{{ hint }}</div>
                 </div>
                 <div class="card-general-usage card-line">
                     <div class="card-desc">General usage:</div>
-                    <div class="card-cont">{{ card.general_sense }}</div>
+                    <div *ngFor="let hint of card.general_sense" class="card-cont">{{ hint }}</div>
                 </div>
                 <div class="card-example-usage card-line">
                     <div class="card-desc">Example usage:</div>
-                    <div class="card-cont">{{ card.example_usage }}</div>
+                    <div *ngFor="let hint of card.example_usage" class="card-cont">{{ hint }}</div>
                 </div>
                 <mat-action-row *ngIf="this.canEdit() || this.canEditCard(card)">
                     <button mat-icon-button matTooltip="Edit card" (click)="editCard(card)" aria-label="Edit card">
