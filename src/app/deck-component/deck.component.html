@@ -10,7 +10,7 @@
         <mat-card>
             <div class="deck-cards">
                 <mat-card *ngFor="let card of this.cards">
-                    <mat-card-title>
+                    <mat-card-title (click)="this.openCardDialog(card)">
                         {{ card.word }}
                     </mat-card-title>
                     <mat-divider></mat-divider>

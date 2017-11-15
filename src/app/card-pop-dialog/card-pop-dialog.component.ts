@@ -6,7 +6,7 @@ import {Card, CardId} from "../card/card";
 @Component({
     selector: 'app-card-pop-dialog',
     templateUrl: './card-pop-dialog.component.html',
-    styleUrls: ['./card-pop-dialog.component.css']
+    styleUrls: ['./card-pop-dialog.component.scss']
 })
 
 export class CardPopDialogComponent implements OnInit {
