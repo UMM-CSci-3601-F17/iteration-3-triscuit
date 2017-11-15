@@ -18,7 +18,6 @@
         <mat-form-field>
             <input matInput id="synInput3" #input type="text" placeholder="Synonym3" [(ngModel)]="newCardSynonym[2]" name="newCardSynonym3">
         </mat-form-field>
-
         <mat-form-field>
             <input matInput id="synInput4" #input type="text" placeholder="Synonym4" [(ngModel)]="newCardSynonym[3]" name="newCardSynonym4">
         </mat-form-field>
@@ -30,24 +29,61 @@
         <mat-accordion>
             <mat-expansion-panel>
                 <mat-expansion-panel-header>Antonym</mat-expansion-panel-header>
-        <mat-form-field>
-            <input matInput required id="antInput" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym[0]" name="newCardAntonym">
-        </mat-form-field>
+                <mat-form-field>
+                    <input matInput required id="antInput1" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym[0]" name="newCardAntonym1">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="antInput2" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym[1]" name="newCardAntonym2">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="antInput3" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym[2]" name="newCardAntonym3">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="antInput4" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym[3]" name="newCardAntonym4">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="antInput5" #input type="text" placeholder="Antonym" [(ngModel)]="newCardAntonym[4]" name="newCardAntonym5">
+                </mat-form-field>
             </mat-expansion-panel>
         </mat-accordion>
         <mat-accordion>
             <mat-expansion-panel>
                 <mat-expansion-panel-header>General Sense</mat-expansion-panel-header>
                     <mat-form-field>
-                        <input matInput required id="genInput" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral[0]" name="newCardGeneral">
+                        <input matInput required id="genInput1" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral[0]" name="newCardGeneral1">
                     </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="genInput2" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral[1]" name="newCardGeneral2">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="genInput3" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral[2]" name="newCardGeneral3">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="genInput4" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral[3]" name="newCardGeneral4">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="genInput5" #input type="text" placeholder="General Sense" [(ngModel)]="newCardGeneral[4]" name="newCardGeneral5">
+                </mat-form-field>
             </mat-expansion-panel>
         </mat-accordion>
         <mat-accordion>
             <mat-expansion-panel>
-                <mat-expansion-panel-header>Example Usage</mat-expansion-panel-header><mat-form-field>
-            <input matInput required id="exInput" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample[0]" name="newCardExample">
-        </mat-form-field>
+                <mat-expansion-panel-header>Example Usage</mat-expansion-panel-header>
+                <mat-form-field>
+                    <input matInput required id="exInput1" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample[0]" name="newCardExample1">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="exInput2" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample[1]" name="newCardExample2">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="exInput3" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample[2]" name="newCardExample3">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="exInput4" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample[3]" name="newCardExample4">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput id="exInput5" #input type="text" placeholder="Example Usage" [(ngModel)]="newCardExample[4]" name="newCardExample5">
+                </mat-form-field>
             </mat-expansion-panel>
         </mat-accordion>
         <br>
