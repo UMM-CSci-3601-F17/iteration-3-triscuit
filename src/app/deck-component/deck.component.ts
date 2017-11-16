@@ -9,6 +9,7 @@ import {ClassService} from "../class/class.service";
 import {AngularFireAuth} from "angularfire2/auth";
 import {componentDestroyed} from "ng2-rx-componentdestroyed";
 import {SaveCardDialogComponent} from "../save-card-dialog/save-card-dialog.component";
+import {CardPopDialogComponent} from "../card-pop-dialog/card-pop-dialog.component";
 
 @Component({
     selector: 'app-deck',
@@ -31,6 +32,15 @@ export class DeckComponent implements OnInit, OnDestroy {
     openAddDialog() {
         let dialogRef = this.dialog.open(NewCardDialogComponent, {
             data: {deckId: this.id},
+        });
+        dialogRef.afterClosed().subscribe(result => {
+
+        });
+    }
+
+    openCardDialog(card: Card) {
+        let dialogRef = this.dialog.open(CardPopDialogComponent, {
+            data: {card: card},
         });
         dialogRef.afterClosed().subscribe(result => {
 
