@@ -30,6 +30,9 @@ export class SaveCardDialogComponent implements OnInit {
         this.newCardGeneral = data.card.general_sense;
         this.newCardExample = data.card.example_usage;
         this.fillHints(this.newCardSynonym);
+        this.fillHints(this.newCardAntonym);
+        this.fillHints(this.newCardGeneral);
+        this.fillHints(this.newCardExample);
         console.log(this.newCardSynonym);
     }
 
@@ -44,12 +47,44 @@ export class SaveCardDialogComponent implements OnInit {
         }
 
     }
+    public deleteEmptyFields():void {
+        for(var i = 0; i < this.newCardSynonym.length; i++){
+            if(this.newCardSynonym[i]==''){
+                console.log("DELETED at index " + i);
+                this.newCardSynonym.splice(i,1);
+                i--;
+            }
+        }
+        for(var i = 0; i < this.newCardAntonym.length; i++){
+            if(this.newCardAntonym[i]==''){
+                console.log("DELETED at index " + i);
+                this.newCardAntonym.splice(i,1);
+                i--;
+            }
+        }
+        for(var i = 0; i < this.newCardGeneral.length; i++){
+            if(this.newCardGeneral[i]==''){
+                console.log("DELETED at index " + i);
+                this.newCardGeneral.splice(i,1);
+                i--;
+            }
+        }
+        for(var i = 0; i < this.newCardExample.length; i++){
+            if(this.newCardExample[i]==''){
+                console.log("DELETED at index " + i);
+                this.newCardExample.splice(i,1);
+                i--;
+            }
+        }
+        console.log("methodState: " + this.newCardSynonym);
 
-    public scrollHint(): string{
-        return this.newCardSynonym[0];
     }
 
+
+
     public editAddedCard(): void {
+        this.deleteEmptyFields();
+        console.log("length of altered array: "+this.newCardSynonym.length);
         this.deckService.editCard(
             this.data.deckId,
             this.data.card.id,
