@@ -11,15 +11,16 @@ import {
     MdButtonModule,
     MdCardModule,
     MdIconModule,
-    MdInputModule,
+    MatInputModule,
     MdMenuModule,
     MdSidenavModule,
     MdToolbarModule,
     MatTooltipModule,
-    MdFormFieldModule,
+    MatFormFieldModule,
     MatDialogModule,
     MdSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule
 } from '@angular/material';
 
 import { FlexLayoutModule, } from '@angular/flex-layout';
@@ -50,12 +51,13 @@ const MATERIAL_MODULES: any[] = [
     MdCardModule,
     MdMenuModule,
     MdSidenavModule,
-    MdInputModule,
+    MatInputModule,
     MatTooltipModule,
-    MdFormFieldModule,
+    MatFormFieldModule,
     MatDialogModule,
     MdSnackBarModule,
     MatExpansionModule,
+    MatSelectModule
 ];
 
 const COVALENT_MODULES: any[] = [

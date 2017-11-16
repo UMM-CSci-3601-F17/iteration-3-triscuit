@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {DeckService} from "../deck/deck.service";
 import {ActivatedRoute} from "@angular/router";
 import {Deck} from "../deck/deck";
@@ -48,6 +48,7 @@ export class PlayComponent implements OnInit, OnDestroy {
     public cardStates: CardState[];
 
 
+
     // from https://stackoverflow.com/a/27747377/8855259
 
     // dec2hex :: Integer -> String
@@ -90,6 +91,10 @@ export class PlayComponent implements OnInit, OnDestroy {
 
     }
 
+    @Input() selected?: number[] = [];
+
+    @Input() hideSelected?: boolean = false;
+
     public updateGame() {
         console.log("update game called " + this.pageNumber);
         this.db.object('games/' + this.gameId).set({
@@ -98,7 +103,6 @@ export class PlayComponent implements OnInit, OnDestroy {
             selectedHints: this.getCardState(this.pageNumber).selectedCardHints
         });
     }
-
 
     public addPoints(pageNumber : number): void {
 

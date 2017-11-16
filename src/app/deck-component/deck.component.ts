@@ -9,7 +9,7 @@ import {ClassService} from "../class/class.service";
 import {AngularFireAuth} from "angularfire2/auth";
 import {componentDestroyed} from "ng2-rx-componentdestroyed";
 import {SaveCardDialogComponent} from "../save-card-dialog/save-card-dialog.component";
-
+import {CardPopDialogComponent} from "../card-pop-dialog/card-pop-dialog.component";
 
 @Component({
     selector: 'app-deck',
@@ -21,6 +21,8 @@ export class DeckComponent implements OnInit, OnDestroy {
     id: string;
     deck: Deck;
     cards: CardId[];
+    isShared: boolean;
+    tempBoolean: boolean;
 
 
     constructor(public afAuth: AngularFireAuth, public dialog: MatDialog, public deckService: DeckService, public snackBar: MatSnackBar, public classService: ClassService, private route: ActivatedRoute) {
@@ -30,6 +32,15 @@ export class DeckComponent implements OnInit, OnDestroy {
     openAddDialog() {
         let dialogRef = this.dialog.open(NewCardDialogComponent, {
             data: {deckId: this.id},
+        });
+        dialogRef.afterClosed().subscribe(result => {
+
+        });
+    }
+
+    openCardDialog(card: Card) {
+        let dialogRef = this.dialog.open(CardPopDialogComponent, {
+            data: {card: card},
         });
         dialogRef.afterClosed().subscribe(result => {
 
@@ -46,6 +57,12 @@ export class DeckComponent implements OnInit, OnDestroy {
         }
     }
 
+    public canEditCard(card: CardId): boolean {
+        if (card.users) {
+            return card.users[this.afAuth.auth.currentUser.uid] &&
+                card.users[this.afAuth.auth.currentUser.uid].owner;
+        }
+    }
 
     ngOnInit() {
         this.route.params.subscribe(params => {
@@ -54,6 +71,7 @@ export class DeckComponent implements OnInit, OnDestroy {
             this.deckService.getDeck(this.id).takeUntil(componentDestroyed(this)).subscribe(
                 deck => {
                     this.deck = deck;
+                    this.isShared = this.deck.isShared;
                 }
             );
 

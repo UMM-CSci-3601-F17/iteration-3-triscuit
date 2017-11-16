@@ -58,22 +58,27 @@ export class DeckService {
         return cards;
     }
 
-    public addNewCard(deckID: string, word: string, synonym: string, antonym: string, general: string, example: string) {
+    public addNewCard(deckID: string, word: string, synonym: string[], antonym: string[], general: string[], example: string[]) {
         const body : Card = {
             word: word,
             synonym: synonym,
             antonym: antonym,
             general_sense: general,
-            example_usage: example
+            example_usage: example,
+            users: {
+                [this.afAuth.auth.currentUser.uid] : {
+                    nickname: this.afAuth.auth.currentUser.displayName,
+                    owner: true
+                }}
         };
         console.log(body);
 
         return this.db.doc('decks/' + deckID).collection('cards').add(body);
     }
 
-    public addNewDeckClass(name: string, classId : string) {
+    public addNewDeckClass(name: string, isShared: boolean, classId : string) {
         let deckCollection = this.db.collection<Deck>('decks');
-        return deckCollection.add({name: name, classId: classId});
+        return deckCollection.add({name: name, isShared: isShared, classId: classId});
     }
 
     public addNewDeckUser(name: string) {
@@ -85,7 +90,7 @@ export class DeckService {
                 owner: true
             }}});
     }
-    public editCard(deckId: string, cardId: string, word: string, synonym: string, antonym: string, general: string, example: string) {
+    public editCard(deckId: string, cardId: string, word: string, synonym: string[], antonym: string[], general: string[], example: string[]) {
         const body : Card = {
             word: word,
             synonym: synonym,
@@ -99,10 +104,29 @@ export class DeckService {
         return this.db.doc('decks/' + deckId + '/cards/' + cardId).update(body);
     }
 
+    public editClassDeck(deckId: string, name: string, isShared: boolean) {
+        const body: Deck = {
+            name: name,
+            isShared: isShared
+        };
+        return this.db.doc('decks/' + deckId).update(body);
+    }
+
+    public editDeck(deckId: string, name: string) {
+        const body: Deck = {
+            name: name,
+        };
+        return this.db.doc('decks/' + deckId).update(body);
+    }
+
     public deleteCard(deckId: string, cardId: string){
         console.log(deckId);
         console.log(cardId);
         return this.db.doc('decks/' + deckId).collection('cards').doc(cardId).delete();
+    }
+
+    public deleteDeck(deckId: string){
+        return this.db.doc('decks/' + deckId).delete();
     }
 
 

@@ -33,9 +33,9 @@ import {ClassService} from "./class/class.service";
 import {NewClassDialogComponent} from "./new-class-dialog/new-class-dialog.component";
 import {JoinClassComponent} from "./join-class-component/join-class.component";
 import {GoogleSignInButtonComponent} from "./google-sign-in-button/google-sign-in-button.component";
-import {PublicDecksComponent} from "./public-decks/public-decks.component";
 import {SaveCardDialogComponent} from "./save-card-dialog/save-card-dialog.component";
 import {JoinGameComponent} from "./join-game/join-game.component";
+import {HelpComponent} from "./help/help.component";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 
 @NgModule({
@@ -65,9 +65,9 @@ import {AngularFireDatabaseModule} from "angularfire2/database";
         MyDecksComponent,
         JoinClassComponent,
         GoogleSignInButtonComponent,
-        PublicDecksComponent,
         SaveCardDialogComponent,
-        JoinGameComponent
+        JoinGameComponent,
+        HelpComponent,
     ],
     entryComponents: [
         NewCardDialogComponent,

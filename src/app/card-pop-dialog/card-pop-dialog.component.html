@@ -1,0 +1,29 @@
+<mat-card class="card-view">
+    <mat-card-title class="card-word">{{ this.word }}</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <span class="card-synonym card-line">
+            <span class="card-desc">Synonym:</span>
+            <span *ngFor="let hint of this.synonym" class="card-cont">{{ hint }}</span>
+        </span>
+        <br>
+        <br>
+        <span class="card-antonym card-line">
+            <span class="card-desc">Antonym:</span>
+            <span *ngFor="let hint of this.antonym" class="card-cont">{{ hint }}</span>
+        </span>
+        <br>
+        <br>
+        <span class="card-general-usage card-line">
+            <span class="card-desc">General usage:</span>
+            <span *ngFor="let hint of this.general_sense" class="card-cont">{{ hint }}</span>
+        </span>
+        <br>
+        <br>
+        <span class="card-example-usage card-line">
+            <span class="card-desc">Example usage:</span>
+            <span *ngFor="let hint of this.example_usage" class="card-cont">{{ hint }}</span>
+        </span>
+    </mat-card-content>
+</mat-card>
+

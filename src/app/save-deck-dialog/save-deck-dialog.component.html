@@ -1,11 +1,11 @@
 <h2 mat-dialog-title>Add New Deck</h2>
-<form #newDeckForm="ngForm" (ngSubmit)="addNewDeck();">
+<form #newDeckForm="ngForm" (ngSubmit)="editAddedDeck();">
     <mat-dialog-content layout="column" class="add-card-form-fields">
         <mat-form-field>
             <input matInput required id="deckName" #input type="text" placeholder="Deck Name" [(ngModel)]="newDeckName" name="newDeckName">
         </mat-form-field>
 
-        <mat-select matInput required *ngIf="this.data && this.data.classId" id="shareState" placeholder="Share?" [(ngModel)]="isShared" name="isShared">
+        <mat-select matInput required *ngIf="this.data && this.data.deck.classId" id="shareState" placeholder="Share?" [(ngModel)]="isShared" name="isShared">
             <mat-option [value]="true">Yes</mat-option>
             <mat-option [value]="false">No</mat-option>
         </mat-select>
@@ -16,3 +16,4 @@
         <button mat-button mat-dialog-close>Cancel</button>
     </mat-dialog-actions>
 </form>
+
