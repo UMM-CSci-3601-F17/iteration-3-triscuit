@@ -15,19 +15,10 @@ import {MatIconRegistry} from '@angular/material';
 })
 export class JoinGameComponent implements OnInit, OnDestroy {
 
-    constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,private db: AngularFireDatabase) {
-        iconRegistry.addSvgIcon(
-            'happy',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/happy.svg'));
-        iconRegistry.addSvgIcon(
-            'smile',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/smile.svg'));
-        iconRegistry.addSvgIcon(
-            'laughing',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/laughing.svg'));
-        iconRegistry.addSvgIcon(
-            'smart',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/smart.svg'));
+    constructor(private db: AngularFireDatabase) {
+        // setTimeout(() => {
+        //     this.emojiState = 1 || 2 || 3 || 4;
+        // }, 10);
 
     }
 
@@ -65,6 +56,9 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                 else
                     this.selectedHints = [];
 
+                // setTimeout(() => {
+                //     this.emojiState = 0;
+                // }, 10);
 
                 if(ob.emojiState == 1){
                     this.happy = true;
