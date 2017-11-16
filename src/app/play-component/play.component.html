@@ -22,21 +22,23 @@
             <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <span class="score">Score: {{this.points}}</span>
 
             <section>
+                <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-            <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="happy"></mat-icon>
+
+                <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
+                <i class="em em-blush"></i>
             </button>
 
             <button class="emoji" mat-icon-button (click)="this.getEmojiSmile(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="smile"></mat-icon>
+                <i class="em em-bowtie"></i>
             </button>
 
             <button class="emoji" mat-icon-button (click)="this.getEmojiLaughing(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="laughing"></mat-icon>
+                <i class="em em-clap"></i>
             </button>
 
             <button class="emoji" mat-icon-button (click)="this.getEmojiSmart(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="smart"></mat-icon>
+                <i class="em em-plus1"></i>
             </button>
 
             </section>
