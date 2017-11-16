@@ -100,7 +100,8 @@ export class PlayComponent implements OnInit, OnDestroy {
         this.db.object('games/' + this.gameId).set({
             card: this.cards[this.pageNumber],
             points: this.points,
-            selectedHints: this.getCardState(this.pageNumber).selectedCardHints
+            selectedHints: this.getCardState(this.pageNumber).selectedCardHints,
+            emojiState: this.emojiState
         });
     }
 
@@ -123,22 +124,22 @@ export class PlayComponent implements OnInit, OnDestroy {
         return this.cardStates[i];
     }
 
-    // public getEmojiHappy(): number{
-    //    return 1;
-    //    console.log(this.emojiState);
-    // }
-    // public getEmojiSmile(){
-    //     this.emojiState=2;
-    //     console.log(this.emojiState);
-    // }
-    // public getEmojiSmart(){
-    //     this.emojiState=3;
-    //     console.log(this.emojiState);
-    // }
-    // public getEmojiLaughing(){
-    //     this.emojiState=4;
-    //     console.log(this.emojiState);
-    // }
+     public getEmojiHappy() {
+        this.emojiState = 1;
+        console.log(this.emojiState);
+     }
+     public getEmojiSmile(){
+         this.emojiState=2;
+         console.log(this.emojiState);
+     }
+     public getEmojiSmart(){
+         this.emojiState=3;
+         console.log(this.emojiState);
+     }
+     public getEmojiLaughing(){
+         this.emojiState=4;
+        console.log(this.emojiState);
+     }
 
     ngOnInit() {
 

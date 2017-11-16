@@ -7,16 +7,16 @@
             <span class="score">Score: {{this.points}}</span>
 
            <div>
-                <mat-icon class="emoji" svgIcon="happy"></mat-icon>
+                <mat-icon class="emoji" *ngIf="this.happy"svgIcon="happy"></mat-icon>
 
 
-                <mat-icon class="emoji" svgIcon="smile"></mat-icon>
+                <mat-icon class="emoji" *ngIf="this.smile"svgIcon="smile"></mat-icon>
 
 
-                <mat-icon class="emoji" svgIcon="laughing"></mat-icon>
+                <mat-icon class="emoji" *ngIf="this.laughing"svgIcon="laughing"></mat-icon>
 
 
-                <mat-icon class="emoji" svgIcon="smart"></mat-icon>
+                <mat-icon class="emoji" *ngIf="this.smart"svgIcon="smart"></mat-icon>
            </div>
 
         </div>

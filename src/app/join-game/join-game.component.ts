@@ -35,6 +35,13 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
     public emojiState: number;
 
+    public happy: boolean = false;
+    public smile: boolean = false;
+    public smart: boolean = false;
+    public laughing: boolean = false;
+
+
+
     public gameId: string;
 
     public card: Card;
@@ -60,17 +67,27 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
 
                 if(ob.emojiState == 1){
-
+                    this.happy = true;
+                    this.smile = false;
+                    this.smart = false;
+                    this.laughing = false;
+                } else if (ob.emojiState == 2) {
+                    this.happy = false;
+                    this.smile = true;
+                    this.smart = false;
+                    this.laughing = false;
+                } else if (ob.emojiState == 3) {
+                    this.happy = false;
+                    this.smile = false;
+                    this.smart = true;
+                    this.laughing = false;
+                } else if (ob.emojiState == 4) {
+                    this.happy = false;
+                    this.smile = false;
+                    this.smart = false;
+                    this.laughing = true;
                 }
-                //
-                // if(ob.gmojiLaughing()) {
-                // }
-                //
-                // if(ob.getEmojiSmart()){
-                // }
-                //
-                // if(ob.getEmojiSmile()){
-                // }
+
 
 
 
@@ -83,6 +100,8 @@ export class JoinGameComponent implements OnInit, OnDestroy {
         });
         this.inGame = true;
     }
+
+
 
     // public getEmojiHappy(){
     // console.log("hello");

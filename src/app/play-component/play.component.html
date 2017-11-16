@@ -23,19 +23,19 @@
 
             <section>
 
-            <button class="emoji" mat-icon-button (click)="this.getEmojiHappy()">
+            <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
                 <mat-icon class="emoji" svgIcon="happy"></mat-icon>
             </button>
 
-            <button class="emoji" mat-icon-button (click)="this.getEmojiSmile()">
+            <button class="emoji" mat-icon-button (click)="this.getEmojiSmile(); this.updateGame()">
                 <mat-icon class="emoji" svgIcon="smile"></mat-icon>
             </button>
 
-            <button class="emoji" mat-icon-button (click)="this.getEmojiLaughing()">
+            <button class="emoji" mat-icon-button (click)="this.getEmojiLaughing(); this.updateGame()">
                 <mat-icon class="emoji" svgIcon="laughing"></mat-icon>
             </button>
 
-            <button class="emoji" mat-icon-button (click)="this.getEmojiSmart()">
+            <button class="emoji" mat-icon-button (click)="this.getEmojiSmart(); this.updateGame()">
                 <mat-icon class="emoji" svgIcon="smart"></mat-icon>
             </button>
 
