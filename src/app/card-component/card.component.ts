@@ -13,6 +13,11 @@ export class CardComponent implements OnInit {
 
     @Input() card: Card;
 
+    @Input() synIndex: number;
+    @Input() antIndex: number;
+    @Input() genIndex: number;
+    @Input() exIndex: number;
+
     @Input() selected?: number[] = [];
 
     @Input() hideSelected?: boolean = false;

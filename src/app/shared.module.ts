@@ -33,6 +33,8 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
 import {NgPipesModule} from "ngx-pipes";
 import {NgxQRCodeModule} from "ngx-qrcode2";
 import {ClipboardModule} from "ngx-clipboard/dist";
+import {MatChipsModule} from '@angular/material/chips';
+import {CovalentChipsModule} from '@covalent/core';
 
 const FLEX_LAYOUT_MODULES: any[] = [
     FlexLayoutModule,
@@ -57,7 +59,8 @@ const MATERIAL_MODULES: any[] = [
     MatDialogModule,
     MdSnackBarModule,
     MatExpansionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
 ];
 
 const COVALENT_MODULES: any[] = [
@@ -74,6 +77,7 @@ const OTHER_MODULES: any[] = [
     NgPipesModule,
     NgxQRCodeModule,
     ClipboardModule,
+    CovalentChipsModule
 ];
 
 
