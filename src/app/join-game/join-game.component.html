@@ -2,7 +2,13 @@
 <div class="margin" layout="row" layout-align="center start" layout-fill>
     <div flex-gt-xs="70" flex-xs="90">
         <div *ngIf="this.inGame && this.card">
-            <app-card [card]="this.card" [selected]="this.selectedHints" [hideSelected]="true"></app-card>
+            <app-card [card] = "this.card"
+                      [synIndex] = "this.synIndex"
+                      [antIndex] = "this.antIndex"
+                      [genIndex] = "this.genIndex"
+                      [exIndex] = "this.exIndex"
+                      [selected] = "this.selectedHints"
+                      [hideSelected] = "true"></app-card>
 
             <span class="score">Score: {{this.points}}</span>
         </div>

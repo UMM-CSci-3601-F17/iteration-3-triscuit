@@ -62,7 +62,7 @@ export class PlayComponent implements OnInit, OnDestroy {
 
     constructor(public deckService : DeckService, private route: ActivatedRoute, private db: AngularFireDatabase) {
         this.cardStates = [];
-        this.gameId = this.generateId(8);
+        this.gameId = this.generateId(6);
 
         const ref = firebase.database().ref('games').child(this.gameId);
         ref.onDisconnect().remove();
@@ -76,6 +76,7 @@ export class PlayComponent implements OnInit, OnDestroy {
         console.log("update game called " + this.pageNumber);
         this.db.object('games/' + this.gameId).set({
             card: this.cards[this.pageNumber],
+            cardState: this.getCardState(this.pageNumber),
             points: this.points,
             selectedHints: this.getCardState(this.pageNumber).selectedCardHints
         });
