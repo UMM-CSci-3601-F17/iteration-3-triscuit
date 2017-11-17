@@ -41,38 +41,14 @@ export class SaveCardDialogComponent implements OnInit {
     }
 
     public fillHints(hints:string[]):void{
-        var i = 0;
         while(hints.length<5){
             hints.push("");
         }
-
     }
-    public deleteEmptyFields():void {
-        for(var i = 0; i < this.newCardSynonym.length; i++){
-            if(this.newCardSynonym[i]==''){
-                console.log("DELETED at index " + i);
-                this.newCardSynonym.splice(i,1);
-                i--;
-            }
-        }
-        for(var i = 0; i < this.newCardAntonym.length; i++){
-            if(this.newCardAntonym[i]==''){
-                console.log("DELETED at index " + i);
-                this.newCardAntonym.splice(i,1);
-                i--;
-            }
-        }
-        for(var i = 0; i < this.newCardGeneral.length; i++){
-            if(this.newCardGeneral[i]==''){
-                console.log("DELETED at index " + i);
-                this.newCardGeneral.splice(i,1);
-                i--;
-            }
-        }
-        for(var i = 0; i < this.newCardExample.length; i++){
-            if(this.newCardExample[i]==''){
-                console.log("DELETED at index " + i);
-                this.newCardExample.splice(i,1);
+    public deleteEmptyFields(hints:string[]):void {
+        for(var i = 0; i < hints.length; i++){
+            if(hints[i]===''){
+                hints.splice(i,1);
                 i--;
             }
         }
@@ -83,7 +59,10 @@ export class SaveCardDialogComponent implements OnInit {
 
 
     public editAddedCard(): void {
-        this.deleteEmptyFields();
+        this.deleteEmptyFields(this.newCardSynonym);
+        this.deleteEmptyFields(this.newCardAntonym);
+        this.deleteEmptyFields(this.newCardGeneral);
+        this.deleteEmptyFields(this.newCardExample);
         console.log("length of altered array: "+this.newCardSynonym.length);
         this.deckService.editCard(
             this.data.deckId,
