@@ -130,7 +130,7 @@ export class PlayComponent implements OnInit, OnDestroy {
 
      public getEmojiHappy() {
          this.emojiState=1;
-        setTimeout(()=>{ this.emojiState=0;},5000);
+       // setTimeout(()=>{ this.emojiState=0;},5000);
         console.log(this.emojiState);
      }
 

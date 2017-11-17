@@ -59,6 +59,7 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                 this.card = ob.card;
                 this.points = ob.points;
                 this.emojiState = ob.emojiState;
+              //  this.happy = ob.happy;
                 if(ob.selectedHints)
                     this.selectedHints = ob.selectedHints;
 
@@ -71,21 +72,25 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                     this.smile = false;
                     this.smart = false;
                     this.laughing = false;
+                    setTimeout(()=>{ this.happy=false;},5000);
                 } else if (ob.emojiState == 2) {
                     this.happy = false;
                     this.smile = true;
                     this.smart = false;
                     this.laughing = false;
+                    setTimeout(()=>{ this.smile=false;},5000);
                 } else if (ob.emojiState == 3) {
                     this.happy = false;
                     this.smile = false;
                     this.smart = true;
                     this.laughing = false;
+                    setTimeout(()=>{ this.smart=false;},5000);
                 } else if (ob.emojiState == 4) {
                     this.happy = false;
                     this.smile = false;
                     this.smart = false;
                     this.laughing = true;
+                    setTimeout(()=>{ this.laughing=false;},5000);
                 }
 
 
