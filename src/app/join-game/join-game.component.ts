@@ -101,6 +101,10 @@ export class JoinGameComponent implements OnInit, OnDestroy {
         this.inGame = true;
     }
 
+    public function() {
+    this.emojiState=0;
+    }
+
 
 
     // public getEmojiHappy(){

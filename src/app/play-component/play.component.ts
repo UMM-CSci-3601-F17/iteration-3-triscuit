@@ -95,6 +95,10 @@ export class PlayComponent implements OnInit, OnDestroy {
 
     @Input() hideSelected?: boolean = false;
 
+    public defaultEmoji() {
+        this.emojiState=0;
+    }
+
     public updateGame() {
         console.log("update game called " + this.pageNumber);
         this.db.object('games/' + this.gameId).set({
@@ -125,9 +129,12 @@ export class PlayComponent implements OnInit, OnDestroy {
     }
 
      public getEmojiHappy() {
-        this.emojiState = 1;
+         this.emojiState=1;
+        setTimeout(()=>{ this.emojiState=0;},5000);
         console.log(this.emojiState);
      }
+
+
      public getEmojiSmile(){
          this.emojiState=2;
          console.log(this.emojiState);
