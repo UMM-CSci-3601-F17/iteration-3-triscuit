@@ -8,6 +8,7 @@ import {AngularFireDatabase} from "angularfire2/database";
 import * as firebase from 'firebase/app';
 
 
+
 @Component({
     selector: 'app-play',
     templateUrl: './play.component.html',
@@ -16,6 +17,8 @@ import * as firebase from 'firebase/app';
 export class PlayComponent implements OnInit, OnDestroy {
 
     deckid : string;
+
+    public emojiState: number = 0;
 
     deck : Deck;
     cards: Card[];
@@ -60,12 +63,18 @@ export class PlayComponent implements OnInit, OnDestroy {
     }
 
 
+
     constructor(public deckService : DeckService, private route: ActivatedRoute, private db: AngularFireDatabase) {
+
         this.cardStates = [];
         this.gameId = this.generateId(6);
 
         const ref = firebase.database().ref('games').child(this.gameId);
+
+
         ref.onDisconnect().remove();
+
+
     }
 
     @Input() selected?: number[] = [];
@@ -78,7 +87,8 @@ export class PlayComponent implements OnInit, OnDestroy {
             card: this.cards[this.pageNumber],
             cardState: this.getCardState(this.pageNumber),
             points: this.points,
-            selectedHints: this.getCardState(this.pageNumber).selectedCardHints
+            selectedHints: this.getCardState(this.pageNumber).selectedCardHints,
+            emojiState: this.emojiState
         });
     }
 
@@ -101,6 +111,22 @@ export class PlayComponent implements OnInit, OnDestroy {
         return this.cardStates[i];
     }
 
+     public getEmojiHappy() {
+        this.emojiState = 1;
+        console.log(this.emojiState);
+     }
+     public getEmojiSmile(){
+         this.emojiState=2;
+         console.log(this.emojiState);
+     }
+     public getEmojiSmart(){
+         this.emojiState=3;
+         console.log(this.emojiState);
+     }
+     public getEmojiLaughing(){
+         this.emojiState=4;
+        console.log(this.emojiState);
+     }
 
     ngOnInit() {
 

@@ -128,4 +128,6 @@ export class DeckService {
     public deleteDeck(deckId: string){
         return this.db.doc('decks/' + deckId).delete();
     }
+
+
 }

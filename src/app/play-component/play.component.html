@@ -20,9 +20,37 @@
 
             <button class="hint-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete || !this.getCardState(ind).cardHints.length" (click)="this.getCardState(ind).randomizeSages(); this.updateGame()">Hint?</button>
             <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
+
+
+            <section>
+                <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+
+
+
+                <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
+                <i class="em em-blush"></i></button>
+
+
+            <button class="emoji" mat-icon-button (click)="this.getEmojiSmile(); this.updateGame()">
+                <i class="em em-bowtie"></i></button>
+
+
+            <button class="emoji" mat-icon-button (click)="this.getEmojiLaughing(); this.updateGame()">
+                <i class="em em-clap"></i></button>
+
+
+            <button class="emoji" mat-icon-button (click)="this.getEmojiSmart(); this.updateGame()">
+                <i class="em em-plus1"></i></button>
+
+
+            </section>
+
+    </div>
+
         </div>
     </div>
-    </div>
+
 
     <kb-nav-button id="backward-button" backward [showBackground]="true" hide-xs
                    [(page)]="this.pageNumber" [pageCount]="pageCount">

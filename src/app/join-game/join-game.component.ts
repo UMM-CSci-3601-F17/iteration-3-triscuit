@@ -18,6 +18,15 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
     public inGame: boolean = false;
 
+    public emojiState: number;
+
+    public happy: boolean = false;
+    public smile: boolean = false;
+    public smart: boolean = false;
+    public laughing: boolean = false;
+
+
+
     public gameId: string;
 
     public card: Card;
@@ -47,19 +56,53 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                 this.exIndex = this.cardState.exIndex;
 
                 this.points = ob.points;
+                this.emojiState = ob.emojiState;
 
                 if(ob.selectedHints)
+                {
                     this.selectedHints = ob.selectedHints;
-                else
+                } else {
                     this.selectedHints = [];
+                }
+
+                if(ob.emojiState == 1){
+                    this.happy = true;
+                    this.smile = false;
+                    this.smart = false;
+                    this.laughing = false;
+                    setTimeout(()=>{ this.happy=false;},5000);
+                } else if (ob.emojiState == 2) {
+                    this.happy = false;
+                    this.smile = true;
+                    this.smart = false;
+                    this.laughing = false;
+                    setTimeout(()=>{ this.smile=false;},5000);
+                } else if (ob.emojiState == 3) {
+                    this.happy = false;
+                    this.smile = false;
+                    this.smart = true;
+                    this.laughing = false;
+                    setTimeout(()=>{ this.smart=false;},5000);
+                } else if (ob.emojiState == 4) {
+                    this.happy = false;
+                    this.smile = false;
+                    this.smart = false;
+                    this.laughing = true;
+                    setTimeout(()=>{ this.laughing=false;},5000);
+                }
+
+
+
             } else {
                 this.card = null;
                 this.points = null;
                 this.selectedHints = null;
             }
+
         });
         this.inGame = true;
     }
+
 
     ngOnInit() {
     }
