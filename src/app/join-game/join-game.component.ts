@@ -6,6 +6,7 @@ import {componentDestroyed} from "ng2-rx-componentdestroyed";
 import {PlayComponent} from "../play-component/play.component";
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
+import {CardState} from "../play-component/CardState";
 
 @Component({
     selector: 'app-join-game',
@@ -45,8 +46,14 @@ export class JoinGameComponent implements OnInit, OnDestroy {
     public gameId: string;
 
     public card: Card;
+    public cardState: CardState;
     public points: number = 0;
     public selectedHints: number[] = [];
+
+    public synIndex: number = 0;
+    public antIndex: number = 0;
+    public genIndex: number = 0;
+    public exIndex: number = 0;
 
     game: Observable<any>;
 
@@ -57,7 +64,16 @@ export class JoinGameComponent implements OnInit, OnDestroy {
             if (ob) {
 
                 this.card = ob.card;
+
+                this.cardState = ob.cardState;
+
+                this.synIndex = this.cardState.synIndex;
+                this.antIndex = this.cardState.antIndex;
+                this.genIndex = this.cardState.genIndex;
+                this.exIndex = this.cardState.exIndex;
+
                 this.points = ob.points;
+
                 this.emojiState = ob.emojiState;
                 if(ob.selectedHints)
                     this.selectedHints = ob.selectedHints;

@@ -10,7 +10,7 @@
             <mat-card>
                 <mat-card-title class="card-word">{{ card.word }}</mat-card-title>
                 <mat-divider></mat-divider>
-                <mat-card-content>
+                <mat-card-content class="hints">
                     <div class="card-synonym card-line" [ngClass]="{'hint-selected': this.getCardState(ind).selectedCardHints.indexOf(1)!= -1}"><div class="card-desc">Synonym:</div> <div class="card-cont">{{ this.getCardState(ind).getRandom(card.synonym, 'syn') }}</div></div>
                     <div class="card-antonym card-line" [ngClass]="{'hint-selected': this.getCardState(ind).selectedCardHints.indexOf(2)!= -1}"><div class="card-desc">Antonym:</div> <div class="card-cont">{{ this.getCardState(ind).getRandom(card.antonym, 'ant') }}</div></div>
                     <div class="card-general-usage card-line" [ngClass]="{'hint-selected': this.getCardState(ind).selectedCardHints.indexOf(3)!= -1}"><div class="card-desc">General usage:</div> <div class="card-cont">{{ this.getCardState(ind).getRandom(card.general_sense, 'gen') }}</div></div>
@@ -40,6 +40,7 @@
             </button>
 
             </section>
+            <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
         </div>
     </div>
     </div>
@@ -51,6 +52,8 @@
                    [(page)]="this.pageNumber" [pageCount]="pageCount">
     </kb-nav-button>
 </kb-page-slider>
-<div class="game-id">{{this.gameId}}</div>
+<mat-chip-list>
+    <mat-chip color="accent" class="game-id">{{this.gameId}}</mat-chip>
+</mat-chip-list>
 
 

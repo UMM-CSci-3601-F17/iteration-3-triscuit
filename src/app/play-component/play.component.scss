@@ -23,6 +23,7 @@
     display: block;
     vertical-align: center;
     margin-right: 15px;
+
 }
 
 
@@ -44,5 +45,22 @@ kb-page-slider {
     position: fixed;
     top: 5px;
     right: 5px;
-    color: white;
+    color: #0D47A1;
+    font-size: 1.3em;
 }
+
+.card-word {
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.hints {
+    word-wrap: break-word;
+}
+
+.card-desc {
+    font-weight: bold;
+}
+
+.card-desc { float: left; width: 120px; }
+.card-cont { margin-left: 120px; }

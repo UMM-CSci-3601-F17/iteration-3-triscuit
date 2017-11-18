@@ -81,7 +81,7 @@ export class PlayComponent implements OnInit, OnDestroy {
 
 
         this.cardStates = [];
-        this.gameId = this.generateId(8);
+        this.gameId = this.generateId(6);
 
         const ref = firebase.database().ref('games').child(this.gameId);
 
@@ -99,6 +99,7 @@ export class PlayComponent implements OnInit, OnDestroy {
         console.log("update game called " + this.pageNumber);
         this.db.object('games/' + this.gameId).set({
             card: this.cards[this.pageNumber],
+            cardState: this.getCardState(this.pageNumber),
             points: this.points,
             selectedHints: this.getCardState(this.pageNumber).selectedCardHints,
             emojiState: this.emojiState
