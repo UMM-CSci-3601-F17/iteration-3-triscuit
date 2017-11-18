@@ -36,10 +36,12 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
     public emojiState: number;
 
+
     public happy: boolean = false;
     public smile: boolean = false;
     public smart: boolean = false;
     public laughing: boolean = false;
+
 
 
 
@@ -75,6 +77,7 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                 this.points = ob.points;
 
                 this.emojiState = ob.emojiState;
+
                 if(ob.selectedHints)
                     this.selectedHints = ob.selectedHints;
 
@@ -103,6 +106,7 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                     this.smart = false;
                     this.laughing = true;
                 }
+
 
 
 

@@ -19,7 +19,8 @@
             </mat-card>
 
             <button class="hint-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete || !this.getCardState(ind).cardHints.length" (click)="this.getCardState(ind).randomizeSages(); this.updateGame()">Hint?</button>
-            <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <span class="score">Score: {{this.points}}</span>
+            <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind); this.updateGame()">Got It!</button>
+            <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
 
             <section>
 
@@ -40,7 +41,7 @@
             </button>
 
             </section>
-            <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
+
         </div>
     </div>
     </div>

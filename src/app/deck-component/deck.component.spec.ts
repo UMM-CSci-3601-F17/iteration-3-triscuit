@@ -66,5 +66,9 @@ describe('DeckComponent', () => {
       expect(component.deck).toEqual({
           name: "test deck"
       });
+  });
+
+  it('should return false since there are no users', () => {
+     expect(component.canEditCard(component.cards[0])).toEqual(false);
   })
 });

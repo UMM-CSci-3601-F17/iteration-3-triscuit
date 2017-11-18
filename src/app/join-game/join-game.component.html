@@ -10,9 +10,11 @@
                       [selected] = "this.selectedHints"
                       [hideSelected] = "true"></app-card>
 
-            <span class="score">Score: {{this.points}}</span>
+            <mat-chip-list class="score">
+                <mat-chip class="score-chip" selected="true"> Score: {{this.points}}</mat-chip>
+            </mat-chip-list>
 
-           <div>
+            <div>
                 <mat-icon class="emoji" *ngIf="this.happy"svgIcon="happy"></mat-icon>
 
 

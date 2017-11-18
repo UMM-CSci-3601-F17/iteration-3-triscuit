@@ -127,19 +127,19 @@ export class PlayComponent implements OnInit, OnDestroy {
 
      public getEmojiHappy() {
         this.emojiState = 1;
-        console.log(this.emojiState);
+        this.updateGame();
      }
      public getEmojiSmile(){
          this.emojiState=2;
-         console.log(this.emojiState);
+         this.updateGame();
      }
      public getEmojiSmart(){
          this.emojiState=3;
-         console.log(this.emojiState);
+         this.updateGame();
      }
      public getEmojiLaughing(){
          this.emojiState=4;
-        console.log(this.emojiState);
+         this.updateGame();
      }
 
     ngOnInit() {

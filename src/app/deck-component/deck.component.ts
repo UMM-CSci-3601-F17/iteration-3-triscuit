@@ -62,6 +62,7 @@ export class DeckComponent implements OnInit, OnDestroy {
             return card.users[this.afAuth.auth.currentUser.uid] &&
                 card.users[this.afAuth.auth.currentUser.uid].owner;
         }
+        return false;
     }
 
     ngOnInit() {

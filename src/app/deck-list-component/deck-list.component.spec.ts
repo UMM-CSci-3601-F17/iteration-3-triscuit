@@ -38,11 +38,4 @@ describe('DeckListComponent', () => {
     fixture.detectChanges();
   });
 
-  // NOTE: FIX THIS TEST, OK?
-
-  /*
-   it('should create', () => {
-     expect(component).toBeTruthy();
-   });
-  */
 });
