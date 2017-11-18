@@ -47,10 +47,10 @@
             </section>
 
     </div>
-            <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
+
         </div>
     </div>
-    </div>
+
 
     <kb-nav-button id="backward-button" backward [showBackground]="true" hide-xs
                    [(page)]="this.pageNumber" [pageCount]="pageCount">
