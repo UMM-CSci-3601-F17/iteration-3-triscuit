@@ -11,7 +11,8 @@ export class NewCardDialogComponent implements OnInit {
 
     constructor(public deckService: DeckService,
                 public matDialogRef: MatDialogRef<NewCardDialogComponent>,
-                @Inject(MAT_DIALOG_DATA) public data: { deckId: string },
+                @Inject(MAT_DIALOG_DATA) public data: { deckId: string
+                },
                 public snackBar: MatSnackBar) {
     }
 

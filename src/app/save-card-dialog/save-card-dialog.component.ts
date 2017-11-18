@@ -25,19 +25,17 @@ export class SaveCardDialogComponent implements OnInit {
         console.log(data);
         this.newCardWord = data.card.word;
         this.newCardSynonym = data.card.synonym;
-        console.log(this.newCardSynonym.length);
         this.newCardAntonym = data.card.antonym;
         this.newCardGeneral = data.card.general_sense;
         this.newCardExample = data.card.example_usage;
-        this.fillHints(this.newCardSynonym);
-        this.fillHints(this.newCardAntonym);
-        this.fillHints(this.newCardGeneral);
-        this.fillHints(this.newCardExample);
-        console.log(this.newCardSynonym);
     }
 
 
     ngOnInit() {
+        this.fillHints(this.newCardSynonym);
+        this.fillHints(this.newCardAntonym);
+        this.fillHints(this.newCardGeneral);
+        this.fillHints(this.newCardExample);
     }
 
     public fillHints(hints:string[]):void{
