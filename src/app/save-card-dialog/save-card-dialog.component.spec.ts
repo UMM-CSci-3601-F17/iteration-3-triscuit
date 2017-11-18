@@ -42,11 +42,6 @@ describe('SaveCardDialogueComponent', () => {
    });
 
    beforeEach( () => {
-
-
-   });
-
-   beforeEach( () => {
       fixture = TestBed.createComponent(SaveCardDialogComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
