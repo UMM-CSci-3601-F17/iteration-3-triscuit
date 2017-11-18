@@ -6,8 +6,7 @@ import {CardState} from "./CardState";
 import {Card} from "../card/card";
 import {AngularFireDatabase} from "angularfire2/database";
 import * as firebase from 'firebase/app';
-import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material';
+
 
 
 @Component({
@@ -65,20 +64,7 @@ export class PlayComponent implements OnInit, OnDestroy {
 
 
 
-    constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, public deckService : DeckService, private route: ActivatedRoute, private db: AngularFireDatabase) {
-        iconRegistry.addSvgIcon(
-            'happy',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/happy.svg'));
-        iconRegistry.addSvgIcon(
-            'smile',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/smile.svg'));
-        iconRegistry.addSvgIcon(
-            'laughing',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/laughing.svg'));
-        iconRegistry.addSvgIcon(
-            'smart',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/smart.svg'));
-
+    constructor(public deckService : DeckService, private route: ActivatedRoute, private db: AngularFireDatabase) {
 
         this.cardStates = [];
         this.gameId = this.generateId(8);

@@ -3,9 +3,7 @@ import {AngularFireDatabase} from "angularfire2/database";
 import {Card} from "../card/card";
 import {Observable} from "rxjs/Observable";
 import {componentDestroyed} from "ng2-rx-componentdestroyed";
-import {PlayComponent} from "../play-component/play.component";
-import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material';
+
 
 @Component({
     selector: 'app-join-game',
@@ -16,9 +14,6 @@ import {MatIconRegistry} from '@angular/material';
 export class JoinGameComponent implements OnInit, OnDestroy {
 
     constructor(private db: AngularFireDatabase) {
-        // setTimeout(() => {
-        //     this.emojiState = 1 || 2 || 3 || 4;
-        // }, 10);
 
     }
 
@@ -50,38 +45,39 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                 this.card = ob.card;
                 this.points = ob.points;
                 this.emojiState = ob.emojiState;
+
                 if(ob.selectedHints)
+                {
                     this.selectedHints = ob.selectedHints;
-
-                else
+                } else {
                     this.selectedHints = [];
-
-                // setTimeout(() => {
-                //     this.emojiState = 0;
-                // }, 10);
+                }
 
                 if(ob.emojiState == 1){
                     this.happy = true;
                     this.smile = false;
                     this.smart = false;
                     this.laughing = false;
+                    setTimeout(()=>{ this.happy=false;},5000);
                 } else if (ob.emojiState == 2) {
                     this.happy = false;
                     this.smile = true;
                     this.smart = false;
                     this.laughing = false;
+                    setTimeout(()=>{ this.smile=false;},5000);
                 } else if (ob.emojiState == 3) {
                     this.happy = false;
                     this.smile = false;
                     this.smart = true;
                     this.laughing = false;
+                    setTimeout(()=>{ this.smart=false;},5000);
                 } else if (ob.emojiState == 4) {
                     this.happy = false;
                     this.smile = false;
                     this.smart = false;
                     this.laughing = true;
+                    setTimeout(()=>{ this.laughing=false;},5000);
                 }
-
 
 
 
@@ -95,11 +91,6 @@ export class JoinGameComponent implements OnInit, OnDestroy {
         this.inGame = true;
     }
 
-
-
-    // public getEmojiHappy(){
-    // console.log("hello");
-    // }
 
     ngOnInit() {
     }
