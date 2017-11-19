@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {DeckService} from "../deck/deck.service";
 import {MatDialogRef, MAT_DIALOG_DATA, MatSnackBar} from "@angular/material";
-import {Card, CardId} from "../card/card";
-import { CovalentVirtualScrollModule } from '@covalent/core';
+import {CardId} from "../card/card";
+
 @Component({
   selector: 'app-save-card-dialog',
   templateUrl: './save-card-dialog.component.html',
@@ -21,8 +21,7 @@ export class SaveCardDialogComponent implements OnInit {
     constructor(public deckService : DeckService, public matDialogRef : MatDialogRef<SaveCardDialogComponent>,
                 @Inject(MAT_DIALOG_DATA) public data: {card: CardId, deckId: string},
                 public snackBar: MatSnackBar) {
-        console.log("constructing SaveCardDialogComponent");
-        console.log(data);
+
         this.newCardWord = data.card.word;
         this.newCardSynonym = data.card.synonym;
         this.newCardAntonym = data.card.antonym;
@@ -50,7 +49,7 @@ export class SaveCardDialogComponent implements OnInit {
                 i--;
             }
         }
-        console.log("methodState: " + this.newCardSynonym);
+
 
     }
 
@@ -61,7 +60,6 @@ export class SaveCardDialogComponent implements OnInit {
         this.deleteEmptyFields(this.newCardAntonym);
         this.deleteEmptyFields(this.newCardGeneral);
         this.deleteEmptyFields(this.newCardExample);
-        console.log("length of altered array: "+this.newCardSynonym.length);
         this.deckService.editCard(
             this.data.deckId,
             this.data.card.id,

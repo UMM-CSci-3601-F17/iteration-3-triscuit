@@ -1,5 +1,4 @@
 import {NewCardDialogComponent} from "./new-card-dialog.component";
-import {DeckListComponent} from "../deck-list-component/deck-list.component";
 import {ComponentFixture, TestBed} from "@angular/core/testing";
 import {Observable} from "rxjs/Observable";
 import {SharedModule} from "../shared.module";

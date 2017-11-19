@@ -5,7 +5,7 @@ import {SharedModule} from "../shared.module";
 import {MATERIAL_COMPATIBILITY_MODE, MD_DIALOG_DATA, MdDialogRef} from "@angular/material";
 import {ActivatedRoute} from "@angular/router";
 import {ComponentFixture, TestBed} from "@angular/core/testing";
-import {Card, CardId} from "../card/card";
+import {CardId} from "../card/card";
 
 describe('SaveCardDialogueComponent', () => {
    let component: SaveCardDialogComponent;

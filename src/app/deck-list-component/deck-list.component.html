@@ -11,6 +11,7 @@
                 <div class="deck-card">
                     <mat-card class="deck" *ngFor="let deck of this.decks">
                         <mat-card-title class="deck-name" matLine [routerLink]="['/deck', deck.id]">{{ deck.name }}
+                            <mat-icon *ngIf="deck.isShared" matTooltip="This deck is open! Students can add to it!">people</mat-icon>
                         </mat-card-title>
                         <mat-divider></mat-divider>
                         <div class="actions">

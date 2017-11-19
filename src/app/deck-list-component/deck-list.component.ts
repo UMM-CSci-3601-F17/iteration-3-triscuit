@@ -55,12 +55,7 @@ export class DeckListComponent implements OnInit {
     }
 
   ngOnInit() {
-      //this.deckService.getDecks();
-      //this.deckService.getUserDecks().subscribe(
-      //    decks => {
-      //        this.decks = decks;
-      //    }
-      //);
+
   }
 
 
