@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeckListComponent } from './deck-list.component';
 import {SharedModule} from "../shared.module";
@@ -6,9 +6,8 @@ import {MATERIAL_COMPATIBILITY_MODE} from "@angular/material";
 import {Observable} from "rxjs/Observable";
 import {Deck} from "../deck/deck";
 import {DeckService} from "../deck/deck.service";
-import {APP_BASE_HREF} from "@angular/common";
 import {RouterTestingModule} from "@angular/router/testing";
-import {ClassService} from "../class/class.service";
+
 
 describe('DeckListComponent', () => {
   let component: DeckListComponent;
@@ -38,11 +37,4 @@ describe('DeckListComponent', () => {
     fixture.detectChanges();
   });
 
-  // NOTE: FIX THIS TEST, OK?
-
-  /*
-   it('should create', () => {
-     expect(component).toBeTruthy();
-   });
-  */
 });

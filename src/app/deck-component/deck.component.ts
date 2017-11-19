@@ -22,7 +22,7 @@ export class DeckComponent implements OnInit, OnDestroy {
     deck: Deck;
     cards: CardId[];
     isShared: boolean;
-    tempBoolean: boolean;
+
 
 
     constructor(public afAuth: AngularFireAuth, public dialog: MatDialog, public deckService: DeckService, public snackBar: MatSnackBar, public classService: ClassService, private route: ActivatedRoute) {
@@ -62,6 +62,7 @@ export class DeckComponent implements OnInit, OnDestroy {
             return card.users[this.afAuth.auth.currentUser.uid] &&
                 card.users[this.afAuth.auth.currentUser.uid].owner;
         }
+        return false;
     }
 
     ngOnInit() {
@@ -101,7 +102,7 @@ export class DeckComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        console.log("deck destroyed");
+
     }
 
 

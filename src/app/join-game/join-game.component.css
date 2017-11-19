@@ -16,9 +16,11 @@
     display: block;
     vertical-align: center;
     margin-right: 15px;
-}
-/*.emoji{*/
-    /*float: right;*/
-    /*margin: 10px;*/
 
-/*}*/
+}
+
+.score-chip {
+    background-color: #0D47A1;
+    color: white;
+}
+

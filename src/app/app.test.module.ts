@@ -37,6 +37,8 @@ import {SaveCardDialogComponent} from "./save-card-dialog/save-card-dialog.compo
 import {JoinGameComponent} from "./join-game/join-game.component";
 import {HelpComponent} from "./help/help.component";
 import {AngularFireDatabaseModule} from "angularfire2/database";
+import {SaveDeckDialogComponent} from "./save-deck-dialog/save-deck-dialog.component";
+import {CardPopDialogComponent} from "./card-pop-dialog/card-pop-dialog.component";
 
 @NgModule({
     imports: [
@@ -68,6 +70,8 @@ import {AngularFireDatabaseModule} from "angularfire2/database";
         SaveCardDialogComponent,
         JoinGameComponent,
         HelpComponent,
+        SaveDeckDialogComponent,
+        CardPopDialogComponent
     ],
     entryComponents: [
         NewCardDialogComponent,

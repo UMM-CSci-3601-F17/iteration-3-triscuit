@@ -18,7 +18,7 @@ export class PlayComponent implements OnInit, OnDestroy {
 
     deckid : string;
 
-    public emojiState: number = 0;
+    public emojiState: string = '';
 
     deck : Deck;
     cards: Card[];
@@ -111,22 +111,12 @@ export class PlayComponent implements OnInit, OnDestroy {
         return this.cardStates[i];
     }
 
-     public getEmojiHappy() {
-        this.emojiState = 1;
-        console.log(this.emojiState);
+     public updateEmojiState(emoji: string) {
+        this.emojiState = emoji;
+        this.updateGame();
+
      }
-     public getEmojiSmile(){
-         this.emojiState=2;
-         console.log(this.emojiState);
-     }
-     public getEmojiSmart(){
-         this.emojiState=3;
-         console.log(this.emojiState);
-     }
-     public getEmojiLaughing(){
-         this.emojiState=4;
-        console.log(this.emojiState);
-     }
+
 
     ngOnInit() {
 

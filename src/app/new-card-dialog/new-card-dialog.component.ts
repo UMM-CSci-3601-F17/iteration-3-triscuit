@@ -11,7 +11,8 @@ export class NewCardDialogComponent implements OnInit {
 
     constructor(public deckService: DeckService,
                 public matDialogRef: MatDialogRef<NewCardDialogComponent>,
-                @Inject(MAT_DIALOG_DATA) public data: { deckId: string },
+                @Inject(MAT_DIALOG_DATA) public data: { deckId: string
+                },
                 public snackBar: MatSnackBar) {
     }
 
@@ -64,8 +65,7 @@ export class NewCardDialogComponent implements OnInit {
             this.newCardGenerals.push(this.newCardGeneral);
         if(this.newCardExample!=''&&this.newCardExamples.length<=5)
             this.newCardExamples.push(this.newCardExample);
-        // We pass the passwordState as a way to keep people from adding cards
-        // to the DB if they got pass the password protection incorrectly
+
         this.deckService.addNewCard(this.data.deckId,
             this.newCardWord,
             this.newCardSynonyms,

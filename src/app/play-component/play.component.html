@@ -6,7 +6,6 @@
         <div flex-gt-xs="70" flex-xs="90">
 
 
-            <!--<app-card [card]="card"></app-card>!-->
             <mat-card>
                 <mat-card-title class="card-word">{{ card.word }}</mat-card-title>
                 <mat-divider></mat-divider>
@@ -19,28 +18,22 @@
             </mat-card>
 
             <button class="hint-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete || !this.getCardState(ind).cardHints.length" (click)="this.getCardState(ind).randomizeSages(); this.updateGame()">Hint?</button>
-            <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind)">Got It!</button> <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
-
+            <button class="got-it-button" mat-raised-button color="primary" [disabled]="this.getCardState(ind).isComplete" (click)="this.addPoints(ind); this.updateGame()">Got It!</button>
+            <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
 
             <section>
                 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-
-
-
-                <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('blush')">
                 <i class="em em-blush"></i></button>
 
-
-            <button class="emoji" mat-icon-button (click)="this.getEmojiSmile(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('bowtie')">
                 <i class="em em-bowtie"></i></button>
 
-
-            <button class="emoji" mat-icon-button (click)="this.getEmojiLaughing(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('clap')">
                 <i class="em em-clap"></i></button>
 
-
-            <button class="emoji" mat-icon-button (click)="this.getEmojiSmart(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('plus1')">
                 <i class="em em-plus1"></i></button>
 
 
@@ -62,3 +55,5 @@
 <mat-chip-list>
     <mat-chip color="accent" class="game-id">{{this.gameId}}</mat-chip>
 </mat-chip-list>
+
+

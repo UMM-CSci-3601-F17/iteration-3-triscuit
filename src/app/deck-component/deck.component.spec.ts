@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DeckComponent } from './deck.component';
 import {SharedModule} from "../shared.module";
 import {MATERIAL_COMPATIBILITY_MODE} from "@angular/material";
-import {CardComponent} from "../card-component/card.component";
 import {DeckService} from "../deck/deck.service";
 import {Observable} from "rxjs";
 import {Deck} from "../deck/deck";
@@ -66,5 +65,9 @@ describe('DeckComponent', () => {
       expect(component.deck).toEqual({
           name: "test deck"
       });
+  });
+
+  it('should return false since there are no users', () => {
+     expect(component.canEditCard(component.cards[0])).toEqual(false);
   })
 });

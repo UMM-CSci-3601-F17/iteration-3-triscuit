@@ -1,6 +1,5 @@
 import {TestBed, ComponentFixture, async} from "@angular/core/testing";
 import {HomeComponent} from "./home.component";
-import {MATERIAL_COMPATIBILITY_MODE} from "@angular/material";
 import {SharedModule} from "../shared.module";
 import {AppTestModule} from "../app.test.module";
 

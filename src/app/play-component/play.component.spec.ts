@@ -87,39 +87,6 @@ describe('PlayComponent', () => {
       expect(component.cardStates[0]).toEqual(card_state);
   });
 
-  // commenting out for now, doesn't work with multiplayer
-
-  // it('should add points correctly based on certain card states', () => {
-  //     let card_state1: CardState;
-  //     let card_state2: CardState;
-  //     let card_state3: CardState;
-  //
-  //
-  //     card_state1 = component.getCardState(0);
-  //     card_state2 = component.getCardState(1);
-  //     card_state3 = component.getCardState(2);
-  //     expect(component.cardStates.length).toEqual(3);
-  //
-  //     card_state1.randomizeSages();
-  //
-  //     card_state2.randomizeSages();
-  //     card_state2.randomizeSages();
-  //
-  //     card_state3.randomizeSages();
-  //     card_state3.randomizeSages();
-  //     card_state3.randomizeSages();
-  //
-  //     component.addPoints(0);
-  //     expect(component.points).toEqual(card_state1.cardPoints);
-  //
-  //     component.addPoints(1);
-  //     expect(component.points).toEqual(card_state1.cardPoints + card_state2.cardPoints);
-  //
-  //     component.addPoints(2);
-  //     expect(component.points).toEqual(card_state1.cardPoints + card_state2.cardPoints + card_state3.cardPoints);
-  //
-  // });
-
   it('should increase page number when adding points', () => {
       let card_state1: CardState;
       card_state1 = component.getCardState(0);
@@ -127,5 +94,28 @@ describe('PlayComponent', () => {
       component.addPoints(0);
       expect(component.pageNumber).toEqual(1);
   });
+
+  it('should update emoji state to the correct emoji', () => {
+     let emoji: string;
+     emoji = 'smile';
+
+     component.updateEmojiState(emoji);
+     expect(component.emojiState).toEqual("smile");
+
+  });
+
+    it('should update emoji state 3 times and get the correct emoji at the end', () => {
+        let emoji1: string = "smile";
+        let emoji2: string = "anger";
+        let emoji3: string = "lit";
+
+
+        component.updateEmojiState(emoji1);
+        component.updateEmojiState(emoji2);
+        component.updateEmojiState(emoji3);
+
+        expect(component.emojiState).toEqual("lit");
+
+    });
 
 });
