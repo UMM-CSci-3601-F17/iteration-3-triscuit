@@ -114,6 +114,7 @@ export class PlayComponent implements OnInit, OnDestroy {
      public updateEmojiState(emoji: string) {
         this.emojiState = emoji;
         this.updateGame();
+
      }
 
 
