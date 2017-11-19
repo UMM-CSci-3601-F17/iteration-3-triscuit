@@ -23,28 +23,34 @@
             <mat-chip color="primary" selected="true" class="score">Score: {{this.points}}</mat-chip>
 
             <section>
+                <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-            <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="happy"></mat-icon>
-            </button>
+
+
+
+                <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
+                <i class="em em-blush"></i></button>
+
 
             <button class="emoji" mat-icon-button (click)="this.getEmojiSmile(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="smile"></mat-icon>
-            </button>
+                <i class="em em-bowtie"></i></button>
+
 
             <button class="emoji" mat-icon-button (click)="this.getEmojiLaughing(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="laughing"></mat-icon>
-            </button>
+                <i class="em em-clap"></i></button>
+
 
             <button class="emoji" mat-icon-button (click)="this.getEmojiSmart(); this.updateGame()">
-                <mat-icon class="emoji" svgIcon="smart"></mat-icon>
-            </button>
+                <i class="em em-plus1"></i></button>
+
 
             </section>
 
+    </div>
+
         </div>
     </div>
-    </div>
+
 
     <kb-nav-button id="backward-button" backward [showBackground]="true" hide-xs
                    [(page)]="this.pageNumber" [pageCount]="pageCount">

@@ -3,32 +3,16 @@ import {AngularFireDatabase} from "angularfire2/database";
 import {Card} from "../card/card";
 import {Observable} from "rxjs/Observable";
 import {componentDestroyed} from "ng2-rx-componentdestroyed";
-import {PlayComponent} from "../play-component/play.component";
-import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material';
 import {CardState} from "../play-component/CardState";
 
 @Component({
     selector: 'app-join-game',
     templateUrl: './join-game.component.html',
     styleUrls: ['./join-game.component.css']
-
 })
 export class JoinGameComponent implements OnInit, OnDestroy {
 
-    constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,private db: AngularFireDatabase) {
-        iconRegistry.addSvgIcon(
-            'happy',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/happy.svg'));
-        iconRegistry.addSvgIcon(
-            'smile',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/smile.svg'));
-        iconRegistry.addSvgIcon(
-            'laughing',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/laughing.svg'));
-        iconRegistry.addSvgIcon(
-            'smart',
-            sanitizer.bypassSecurityTrustResourceUrl('assets/smart.svg'));
+    constructor(private db: AngularFireDatabase) {
 
     }
 
@@ -36,12 +20,10 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
     public emojiState: number;
 
-
     public happy: boolean = false;
     public smile: boolean = false;
     public smart: boolean = false;
     public laughing: boolean = false;
-
 
 
 
@@ -75,38 +57,40 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                 this.exIndex = this.cardState.exIndex;
 
                 this.points = ob.points;
-
                 this.emojiState = ob.emojiState;
 
                 if(ob.selectedHints)
+                {
                     this.selectedHints = ob.selectedHints;
-
-                else
+                } else {
                     this.selectedHints = [];
-
+                }
 
                 if(ob.emojiState == 1){
                     this.happy = true;
                     this.smile = false;
                     this.smart = false;
                     this.laughing = false;
+                    setTimeout(()=>{ this.happy=false;},5000);
                 } else if (ob.emojiState == 2) {
                     this.happy = false;
                     this.smile = true;
                     this.smart = false;
                     this.laughing = false;
+                    setTimeout(()=>{ this.smile=false;},5000);
                 } else if (ob.emojiState == 3) {
                     this.happy = false;
                     this.smile = false;
                     this.smart = true;
                     this.laughing = false;
+                    setTimeout(()=>{ this.smart=false;},5000);
                 } else if (ob.emojiState == 4) {
                     this.happy = false;
                     this.smile = false;
                     this.smart = false;
                     this.laughing = true;
+                    setTimeout(()=>{ this.laughing=false;},5000);
                 }
-
 
 
 
@@ -121,11 +105,6 @@ export class JoinGameComponent implements OnInit, OnDestroy {
         this.inGame = true;
     }
 
-
-
-    // public getEmojiHappy(){
-    // console.log("hello");
-    // }
 
     ngOnInit() {
     }
