@@ -17,13 +17,13 @@
            <div>
                <span class="emoji">
                <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-               <i class="em em-blush"*ngIf="this.happy"></i>
+               <i class="em em-blush"*ngIf="this.emojiState == 'blush'"></i>
 
-               <i class="em em-bowtie"*ngIf="this.smile"></i>
+               <i class="em em-bowtie"*ngIf="this.emojiState == 'bowtie'"></i>
 
-               <i class="em em-clap"*ngIf="this.laughing"></i>
+               <i class="em em-clap"*ngIf="this.emojiState == 'clap'"></i>
 
-               <i class="em em-plus1"*ngIf="this.smart"></i>
+               <i class="em em-plus1"*ngIf="this.emojiState == 'plus1'"></i>
                </span>
            </div>
 

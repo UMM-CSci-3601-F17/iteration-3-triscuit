@@ -25,22 +25,16 @@
             <section>
                 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-
-
-
-                <button class="emoji" mat-icon-button (click)="this.getEmojiHappy(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('blush')">
                 <i class="em em-blush"></i></button>
 
-
-            <button class="emoji" mat-icon-button (click)="this.getEmojiSmile(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('bowtie')">
                 <i class="em em-bowtie"></i></button>
 
-
-            <button class="emoji" mat-icon-button (click)="this.getEmojiLaughing(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('clap')">
                 <i class="em em-clap"></i></button>
 
-
-            <button class="emoji" mat-icon-button (click)="this.getEmojiSmart(); this.updateGame()">
+                <button class="emoji" mat-icon-button (click)="this.updateEmojiState('plus1')">
                 <i class="em em-plus1"></i></button>
 
 

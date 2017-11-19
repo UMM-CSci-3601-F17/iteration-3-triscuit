@@ -18,12 +18,14 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
     public inGame: boolean = false;
 
-    public emojiState: number;
+    public emojiState: string = '';
 
+    /*
     public happy: boolean = false;
     public smile: boolean = false;
     public smart: boolean = false;
     public laughing: boolean = false;
+    */
 
 
 
@@ -58,6 +60,7 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
                 this.points = ob.points;
                 this.emojiState = ob.emojiState;
+                setTimeout(()=>{ this.emojiState='';},5000);
 
                 if(ob.selectedHints)
                 {
@@ -65,7 +68,7 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                 } else {
                     this.selectedHints = [];
                 }
-
+/*
                 if(ob.emojiState == 1){
                     this.happy = true;
                     this.smile = false;
@@ -90,7 +93,7 @@ export class JoinGameComponent implements OnInit, OnDestroy {
                     this.smart = false;
                     this.laughing = true;
                     setTimeout(()=>{ this.laughing=false;},5000);
-                }
+                }*/
 
 
 
