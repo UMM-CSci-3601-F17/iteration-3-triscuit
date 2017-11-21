@@ -52,11 +52,7 @@ export class JoinGameComponent implements OnInit, OnDestroy {
 
                 this.points = ob.points;
                 this.emojiState = ob.emojiState;
-                //setTimeout(()=>{ this.emojiState='';},5000);
-                setTimeout(()=>{ this.db.object('games/' + this.gameId).update({
-                    emojiState: ''
-                });
-                },5000);
+                
                 if(ob.selectedHints)
                 {
                     this.selectedHints = ob.selectedHints;

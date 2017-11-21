@@ -85,12 +85,11 @@ export class PlayComponent implements OnInit, OnDestroy {
         console.log("update game called " + this.pageNumber);
 
 
-            this.db.object('games/' + this.gameId).set({
+            this.db.object('games/' + this.gameId).update({
                 card: this.cards[this.pageNumber],
                 cardState: this.getCardState(this.pageNumber),
                 points: this.points,
-                selectedHints: this.getCardState(this.pageNumber).selectedCardHints,
-                emojiState: this.emojiState
+                selectedHints: this.getCardState(this.pageNumber).selectedCardHints
             });
 
 
@@ -120,7 +119,14 @@ export class PlayComponent implements OnInit, OnDestroy {
 
      public updateEmojiState(emoji: string) {
         this.emojiState = emoji;
-        this.updateGame();
+         this.db.object('games/' + this.gameId).update({
+             emojiState: emoji
+         });
+         setTimeout(()=>{ this.db.object('games/' + this.gameId).update({
+             emojiState: ''
+         });
+         },5000);
+        //this.updateGame();
          //this.emojiState = '';
      }
 
