@@ -90,6 +90,7 @@ export class PlayComponent implements OnInit, OnDestroy {
             selectedHints: this.getCardState(this.pageNumber).selectedCardHints,
             emojiState: this.emojiState
         });
+        this.emojiState = '';
     }
 
     public addPoints(pageNumber : number): void {
