@@ -83,13 +83,20 @@ export class PlayComponent implements OnInit, OnDestroy {
 
     public updateGame() {
         console.log("update game called " + this.pageNumber);
-        this.db.object('games/' + this.gameId).set({
-            card: this.cards[this.pageNumber],
-            cardState: this.getCardState(this.pageNumber),
-            points: this.points,
-            selectedHints: this.getCardState(this.pageNumber).selectedCardHints,
-            emojiState: this.emojiState
-        });
+
+
+            this.db.object('games/' + this.gameId).set({
+                card: this.cards[this.pageNumber],
+                cardState: this.getCardState(this.pageNumber),
+                points: this.points,
+                selectedHints: this.getCardState(this.pageNumber).selectedCardHints,
+                emojiState: this.emojiState
+            });
+
+
+        setTimeout(()=>{this.emojiState=''},5000);
+
+
     }
 
     public addPoints(pageNumber : number): void {
@@ -114,7 +121,7 @@ export class PlayComponent implements OnInit, OnDestroy {
      public updateEmojiState(emoji: string) {
         this.emojiState = emoji;
         this.updateGame();
-         this.emojiState = '';
+         //this.emojiState = '';
      }
 
 
