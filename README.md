@@ -8,20 +8,26 @@
 - [Testing and Continuous Integration](#testing-and-continuous-integration)
 - [Resources](#resources)
 	- [Angular 4](#angular-4)
-	- [SparkJava](#sparkjava)
-	- [MongoDB](#mongodb)
+	- [Firebase](#firebase)
+	
 
 <!-- /TOC -->
 
 ## Setup
 
-As in the labs, you'll be using IntelliJ. Once you've all joined your
-group using GitHub classroom, you can clone your repository using IntelliJ:
+The setup for our project is based around the assumption that we are using
+IntelliJ Idea. The setup is as follows:
 
 - When prompted to create a new IntelliJ project, select **yes**.
-- Select **import project from existing model** and select **Gradle.**
+- Select **Create project from existing sources**
   - Make sure **Use default Gradle wrapper** is selected.
 - Click **Finish.**
+- When the project loads up there will be a little prompt in the bottom right corner 
+with a link to **install/update NPM**, you are going to want to click that.
+- You can confirm that the install worked if you see a little **npm** tab near the
+bottom left of your screen
+- Once that it is done, you will want to open up the **Terminal** and simply
+type in `yarn` then run it
 - If IDEA asks you if you want to compile JavaScript to TypeScript :fire: DO NOT :fire:
 it will break your project.
 
@@ -35,35 +41,21 @@ tools.
 
 ## Running your project
 
-- The familiar **run** Gradle task will still run your SparkJava server.
-(which is available at ``localhost:4567``)
-- The **build** task will still _build_ the entire project (but not run it)
-- The **runClient** task will build and run the client side of your project (available at ``localhost:9000``)
-- The **build.sh** is a script that calls upon gradle build to build the entire project which creates an executable to be able to launch the
-project in production mode. To run **build.sh**, go to your project directory in a terminal and enter:``./build ``
+- When you want to run the client, simply type **ng serve**in the terminal of
+your choosing. NOTE: If you want to use a standalone terminal, don't forget to `cd` into
+your project
+- Once it has compiled, go to ``http://localhost:9000`` to see your website!
 
-When **build.sh** is run the script **.sage_run.sh** is copied to ~/**sage.sh** that when launched i.e. ``./sage.sh``
-will run your project in production mode. The API_URL within the _environment.prod.ts_ should reflect the url to get to your server e.g. 
-``http://localhost:4567`` or ``http://acooldomainname.com``
-
-:exclamation: Pro-tip: IntelliJ comes with a nice view to see the mongo databases setup.
-To access this click on File -> Settings -> Plugins, type Mongo and make sure the Mongo Plugin is installed.
-Now head to View -> Tool Windows -> Mongo Explorer. Then use the tool icon to add configuration.
-Once prompted type for Path to Mongo Shell: _"/usr/bin/mongo"_
-and hit the <span style="color:green">green :heavy_plus_sign:</span>, to add your label and, huzzah!, Mongo Explorer is on your side bar.
 
 ## Testing and Continuous Integration
 
 Testing options are still integrated in this lab so you can test the client, or the server or both.
 Testing client:
-* `runAllTests` runs both the server tests and the clients tests once.
-* `runClientTests` runs the client tests once.
-* `runClientTestsAndWatch` runs the client tests every time that the code changes after a save.
-* `runClientTestsWithCoverage` runs the client tests and deposits code coverage statistics into a new directory within `client` called `coverage`. In there you will find an `index.html`. Right click on `index.html` and select `Open in Browser` with your browser of choice. For Chrome users, you can drag and drop index.html onto chrome and it will open it.  
-* `runE2ETest` runs end to end test for the client side. NOTE: Two Gradle tasks _must_ be run before you can run the e2e tests. 
-The server (`run`) needs to be on for this test to work, and you have to
-need to have data in the `dev` database before running the e2e tests!
-* runServerTests runs the server tests.
+* `ng test` (in the terminal) will run all client tests and re-run after every safe.
+
+**NOTE**: The npm window is know to be buggy, so please run all commands in the
+terminal
+
 
 Turn on your repo in [Travis CI][travis], replace the build status image in this README, and push your changes. That will trigger a build with Travis.
 
@@ -76,13 +68,10 @@ Turn on your repo in [Travis CI][travis], replace the build status image in this
 - [End to end testing (e2e) with protactor and Angular CLI][e2e-testing]
 - [Angular CLI commands](https://github.com/angular/angular-cli/wiki)
 
-### SparkJava
-- [Spark documentation][spark-documentation]
-- [HTTP Status Codes][status-codes]
-- [Other Resources][lab2]
+### Google Firebase
+- [Google Firebase][firebase]
+- [Firebase Console][firebase_console]
 
-### MongoDB
-- [Mongo's Java Drivers (Mongo JDBC)][mongo-jdbc]
 
 
 [angular-cli]: https://idyllic.co/blog/beginners-guide-angular-cli/
@@ -90,9 +79,7 @@ Turn on your repo in [Travis CI][travis], replace the build status image in this
 [angular4-karma-jasmine]: https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
 [e2e-testing]: https://coryrylan.com/blog/introduction-to-e2e-testing-with-the-angular-cli-and-protractor
 [environments]: http://tattoocoder.com/angular-cli-using-the-environment-option/
-[spark-documentation]: http://sparkjava.com/documentation.html
-[status-codes]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
-[lab2]: https://github.com/UMM-CSci-3601/3601-lab2_client-server/blob/master/README.md#resources
-[mongo-jdbc]: https://docs.mongodb.com/ecosystem/drivers/java/
 [labtasks]: LABTASKS.md
 [travis]: https://travis-ci.org/
+[firebase]: https://firebase.google.com/
+[firebase_console]: https://console.firebase.google.com/
